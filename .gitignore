@@ -2,6 +2,7 @@
 *.log
 
 node_modules
+.sass-cache
 
 /.htaccess
 /license.txt
@@ -10,3 +11,5 @@ node_modules
 /sitemap.xml.gz
 
 local/
+
+main.min.css.map
