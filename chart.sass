@@ -7,17 +7,22 @@ canvas
   clip-path: url(#SVGID_2_)
   fill: rgba(0, 0, 0, 0.6)
 
-.render
-  background-image: url(images/cubus.png)
-  background-position: center
-  background-repeat: no-repeat
-  background-size: contain
+.col-content
+
 
 .chart-container
   background-repeat: no-repeat
   background-position: center
 
 .content-chart
+  .render
+    padding: (100%/6)
+  .column--center
+    .col-content
+      background-image: url(images/cubus.png)
+      background-position: center 1.5em
+      background-repeat: no-repeat
+      background-size: contain
   &.content-chart
     .column
       background: #1e60ce
