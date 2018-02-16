@@ -28,12 +28,29 @@
       </div>
     </header>
 
-    <div class="content-block">
+    <div class="content-block content-chart">
 
-      <div data-rellax-speed="-7" class="parallax--center column column--left"></div>
-      <div data-rellax-speed="-5" class="parallax--center column column--center"></div>
-      <div class="parallax--center column column--right"></div>
+      <div data-rellax-speed="-7" class="parallax--center column column--left">
 
+        <div class="col-content">
+          <div class="chartLegend" id="myChartLegend">
+            <!-- Here will be the legend -->
+          </div>
+        </div>
+      </div><!--
+      --><div data-rellax-speed="-5" class="parallax--center column column--center">
+        <div class="col-content">
+          <div class="chart-container">
+
+            <div id="canvas-holder">
+                <canvas id="chart-area" />
+            </div>
+          </div>
+        </div>
+      </div><!--
+      --><div class="parallax--center column column--right">
+        <!--  THIS IS THE RIGHT ONE-->
+      </div>
     </div>
 
     <!-- <div class="content-block">
@@ -45,9 +62,17 @@
     </div> -->
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <!-- <script src="mmkjony-enllax.js-86f5248/jquery.enllax.min.js"></script> -->
+
+    <!--  Libraries-->
+    <script src="Chart.bundle.js"></script>
+    <script src="chartjs-plugin-deferred.min.js"></script>
+    <script src="utils.js"></script>
     <script src="rellax.min.js"></script>
+
+    <!--  Own scirpt -->
     <script src="main.js"></script>
+    <script src="main-chart.js" charset="utf-8"></script>
   </body>
 </html>

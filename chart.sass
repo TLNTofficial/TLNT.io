@@ -1,0 +1,72 @@
+canvas
+  -moz-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+
+.st0
+  clip-path:url(#SVGID_2_)
+  fill: rgba(0, 0, 0, 0.6)
+
+
+.chart-container
+  background-repeat: no-repeat
+  background-position: center
+
+.content-chart
+  &.content-chart
+    .column
+      background: #1e60ce
+      background: url(world.svg),-moz-linear-gradient(left, #1e60ce 0%, #08398a 100%)
+      background: url(world.svg),-webkit-linear-gradient(left, #1e60ce 0%,#08398a 100%)
+      background: url(world.svg),linear-gradient(to right, #1e60ce 0%,#08398a 100%)
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e60ce', endColorstr='#08398a',GradientType=1 )
+      +background-grid-gradient()
+
+ul.chart-legend
+  padding-right: 1em
+  span.part-ammount
+    display: block
+    color: #fcfdfe
+    font-weight: 700
+  div.circle
+    display: none
+    position: absolute
+    right: -7.55px
+    top: 21.5px
+    border-color: #1d2d60
+    border-radius: 14px
+    border-style: solid
+    height: 12px
+    width: 12px
+    background-color: #1d2d60
+    &.active
+      display: block
+  li.legend-item
+    text-align: right
+    list-style: none
+    position: relative
+    min-height: 48px
+    margin-bottom: 32px
+    padding: 12px 80px 0 0px
+    color: #b3c3db
+    &::before
+      content: ""
+      position: absolute
+      top: 44px
+      bottom: -50px
+      right: 0px
+      width: 1px
+      background-color: #a4b9d8
+    &:after
+      content: ""
+      position: absolute
+      top: 15px
+      right: -15px
+      width: 25px
+      height: 25px
+      border: #a4b9d8 3px solid
+      border-radius: 25px
+      text-align: center
+
+    &:last-child::before
+      bottom: 100%
