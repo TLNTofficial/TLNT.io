@@ -16,16 +16,7 @@ var config = {
                 4,
                 8,
             ],
-            borderColor: [
-              'rgba(0, 0, 0, 0.0)',
-              'rgba(0, 0, 0, 0.0)',
-              'rgba(0, 0, 0, 0.0)',
-              'rgba(0, 0, 0, 0.0)',
-              'rgba(0, 0, 0, 0.0)',
-              'rgba(0, 0, 0, 0.0)',
-              'rgba(0, 0, 0, 0.0)',
-              'rgba(0, 0, 0, 0.0)',
-            ],
+            borderColor: 'rgba(0, 0, 0, 0.0)',
             backgroundColor: [
                 'rgb(37, 110, 230)',
                 'rgb(228, 25, 117)',
@@ -36,27 +27,17 @@ var config = {
                 'rgb(132, 219, 44)',
                 'rgb(255, 255, 255)',
             ],
-            // hoverBackgroundColor: [
-            //   'rgba(200, 0, 100, 0.5)',
-            //   'rgba(200, 0, 100, 0.5)',
-            //   'rgba(200, 0, 100, 0.5)',
-            //   'rgba(200, 0, 100, 0.5)',
-            //   'rgba(200, 0, 100, 0.5)',
-            //   'rgba(200, 0, 100, 0.5)',
-            //   'rgba(200, 0, 100, 0.5)',
-            //   'rgba(200, 0, 100, 0.5)',
-            // ],
-            label: 'Dataset 1'
+            label: 'Token Distribution',
         }],
         labels: [
-            "Pre-sale",
-            "ICO Crowd Sale",
-            "Founders & Team",
-            "Advisers & Ambassadors",
-            "Invenstors",
-            "iCasting bounty community",
-            "Future partners",
-            "Bonus",
+          "Pre-sale",
+          "ICO Crowd Sale",
+          "Founders & Team",
+          "Advisers & Ambassadors",
+          "Invenstors",
+          "iCasting bounty community",
+          "Future partners",
+          "Bonus",
         ]
     },
     options: {
@@ -64,24 +45,17 @@ var config = {
         responsive: true,
         legend: {
           display: false,
-          position: 'left',
-          labels: {
-              fontFamily: "'Maven Pro', sans-serif",
-              fontSize: 28,
-              fontColor: 'white'
-          },
         },
         layout: {
             padding: {
-                left: 64,
-                right: 64,
-                top: 64,
-                bottom: 64,
+              left: 64,
+              right: 64,
+              top: 64,
+              bottom: 64,
             },
         },
         title: {
           display: false,
-          text: 'TLNT Tokens'
         },
         animation: {
           animateScale: true,
@@ -93,7 +67,7 @@ var config = {
         plugins: {
           deferred: {
             "xOffset": "50%",
-            "delay": 250,
+            "delay": 150,
           },
         },
         //This code is for a custom callBack for the legend and return the color of the chart
@@ -138,12 +112,15 @@ window.onload = function() {
       var label = myDoughnut.data.labels[firstPoint._index];
       var value = myDoughnut.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
 
-      console.log(label + ": " + value + "% ");
+      //console.log(label + ": " + value + "% ");
 
       var clickedIndex = firstPoint._index++;
       $(".chartLegend li .circle").removeClass("active");
       $( ".chartLegend li:nth-child(" + firstPoint._index + ") .circle" ).toggleClass( "active" );
+
+      // Update
       myDoughnut.update();
+      rSize(firstPoint._index);
     });
 
     // On click event for the custom legend
@@ -155,29 +132,29 @@ window.onload = function() {
       $(".chartLegend li .circle").removeClass("active");
       $( ".chartLegend li:nth-child(" + value + ") .circle" ).toggleClass( "active" );
 
-      var myData = myDoughnut.data.datasets[0];
-      myData.data[ $(this).index() ] += 1;
-
-
-      var thisPart = myData._meta[0].data[ $(this).index() ];
-      //console.log(thisPart);
-
-      var innerRadius = thisPart._model["innerRadius"];
-      var outerRadius = thisPart._model["outerRadius"];
-
-      var newInner = (innerRadius*1.02);
-      var newOuter = (outerRadius*1.02);
-      outerRadius = newOuter;
-      innerRadius = newInner;
+      // Makes the chart bigger if clicked on the a label
+      //myData.data[ $(this).index() ] += 1;
 
       //myData.backgroundColor[ $(this).index() ] = rColor();
       //myData.hoverBackgroundColor[ $(this).index() ] = Chart.defaults.global.defaultColor;
 
+      // Update
       myDoughnut.update();
-      myData._meta[0].data[ $(this).index() ]._model["innerRadius"] = (innerRadius*0.98);
-      myData._meta[0].data[ $(this).index() ]._model["outerRadius"] = (outerRadius*1.005);
 
-      // // This logs the value of the label
+      rSize($(this).index());
+
+      // This logs the value of the label
       //console.log(myData.data[$(this).index()]);
     });
+
+    function rSize(currentVal) {
+      var myData = myDoughnut.data.datasets[0];
+      var thisPart = myData._meta[0].data[ currentVal ];
+      //console.log(thisPart);
+      var innerRadius = thisPart._model["innerRadius"]*1.02;
+      var outerRadius = thisPart._model["outerRadius"]*1.02;
+
+      myData._meta[0].data[ currentVal ]._model["innerRadius"] = (innerRadius*0.98);
+      myData._meta[0].data[ currentVal ]._model["outerRadius"] = (outerRadius*1.007);
+    }
 };
