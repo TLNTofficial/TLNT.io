@@ -29,6 +29,76 @@ html, body
   height: 100%
   font-family: 'Maven Pro', sans-serif
 
+nav
+  z-index: 20
+  padding: 4em 4em 0 4em
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  .nav-brand
+    width: 25%
+    display: inline-block
+  .nav-navigation
+    width: 75%
+    display: inline-block
+    vertical-align: top
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      float: right
+      li
+        display: inline-block
+        text-transform: uppercase
+        position: relative
+        padding: 1em 1.5em
+        &:last-of-type, &:nth-last-of-type(2)
+          &::after
+            content: ""
+            width: 0
+        &::after
+          content: ""
+          position: absolute
+          width: 1px
+          height: 2.6em
+          background-color: rgba(white, .5)
+          transform: translateY(-50%)
+          top: 50%
+          right: -1px
+        a
+          color: #fff
+          font-size: 1em
+          font-weight: 500
+          text-decoration: none
+
+        &.nav-langselect
+          border: 2px solid white
+          border-radius: 100%
+          position: relative
+          width: 2em
+          height: 2em
+          padding: 1em
+          &::after
+            content: ""
+            background: url('data:image/svg+xml,<?xml version="1.0" encoding="UTF-8"?><svg enable-background="new 0 0 21.5 11.9" version="1.1" viewBox="0 0 21.5 11.9" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style type="text/css">	.st1{fill:#FFFFFF;}</style><g class="st0">	<path class="st1" d="m12.2 11.3c-0.8 0.8-2.1 0.8-2.9 0l-8.5-8.5c-1.4-1.4-1-2.8 1.5-2.8h17c2.2 0 3 1.2 1.4 2.8l-8.5 8.5"/></g></svg>') no-repeat
+            position: absolute
+            left: 50%
+            transform: translate(-50%, 120%)
+            width: .65em
+            height: .5em
+            background-size: contain
+            background-position: center
+          span.nav-langselect__selected
+            display: inline-block
+            text-align: center
+            width: 100%
+            line-height: 2em
+            color: white
+          ul
+            display: none
+
+
 header
   background-color: #3388ee
   height: 300px
