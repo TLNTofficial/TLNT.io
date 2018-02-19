@@ -7,10 +7,6 @@ canvas
   clip-path: url(#SVGID_2_)
   fill: rgba(0, 0, 0, 0.6)
 
-.chart-container
-  background-repeat: no-repeat
-  background-position: center
-
 
 
 .content-chart
@@ -18,20 +14,45 @@ canvas
     .button-holder
       display: flex
       justify-content: center
+      margin: 4em 0em
+
       button
         text-align: center
+        &.btn--lightblue
+          &.btn
+            background: #05a0d6
+            background: -moz-linear-gradient(left, #05a0d6 0%, #3dfcfc 25%, #3dfcfc 75%, #05a0d6 100%)
+            background: -webkit-linear-gradient(left, #05a0d6 0%,#3dfcfc 25%,#3dfcfc 75%,#05a0d6 100%)
+            background: linear-gradient(to right, #05a0d6 0%,#3dfcfc 25%,#3dfcfc 75%,#05a0d6 100%)
+            background-position: 0
+            background-size: 200% 100%
+            box-shadow: 0px 8px 18px 0px rgba(20,25,50,0.17)
+            font-size: 0.8em
+            border: 2px solid transparent
+            border-image: url()
+
+            &:hover
+              animation-name: gradient-roll
+              animation-duration: 1.5s
+              animation-iteration-count: infinite
+              animation-timing-function: linear
+              box-shadow: $shadow__lg
     .col-content
       background-image: url(images/cubus.png)
       background-position: center 1.5em
       background-repeat: no-repeat
       background-size: contain
+      .chart-container
+        background-repeat: no-repeat
+        background-position: center
+        padding: 5em
   &.content-chart
     .column
       background: #1e60ce
-      background: url(images/world.svg),-moz-linear-gradient(left, #1e60ce 0%, #08398a 100%)
-      background: url(images/world.svg),-webkit-linear-gradient(left, #1e60ce 0%,#08398a 100%)
-      background: url(images/world.svg),linear-gradient(to right, #1e60ce 0%,#08398a 100%)
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e60ce', endColorstr='#08398a',GradientType=1 )
+      background: url(images/world.svg),-moz-linear-gradient(-30deg, #266ee7 0%, #08398a 100%)
+      background: url(images/world.svg),-webkit-linear-gradient(-30deg, #266ee7 0%,#08398a 100%)
+      background: url(images/world.svg),linear-gradient(120deg, #266ee7 0%,#08398a 100%)
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#266ee7', endColorstr='#08398a',GradientType=1 )
       +background-grid-gradient()
   .column
     .col-content
@@ -89,6 +110,7 @@ ul.chart-legend
     margin-bottom: 32px
     padding: 12px 80px 0 0px
     color: #b3c3db
+    cursor: pointer
     &::before
       content: ""
       position: absolute
