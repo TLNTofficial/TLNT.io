@@ -36,16 +36,16 @@ var config = {
                 'rgb(132, 219, 44)',
                 'rgb(255, 255, 255)',
             ],
-            hoverBackgroundColor: [
-              'rgba(200, 0, 100, 0.5)',
-              'rgba(200, 0, 100, 0.5)',
-              'rgba(200, 0, 100, 0.5)',
-              'rgba(200, 0, 100, 0.5)',
-              'rgba(200, 0, 100, 0.5)',
-              'rgba(200, 0, 100, 0.5)',
-              'rgba(200, 0, 100, 0.5)',
-              'rgba(200, 0, 100, 0.5)',
-            ],
+            // hoverBackgroundColor: [
+            //   'rgba(200, 0, 100, 0.5)',
+            //   'rgba(200, 0, 100, 0.5)',
+            //   'rgba(200, 0, 100, 0.5)',
+            //   'rgba(200, 0, 100, 0.5)',
+            //   'rgba(200, 0, 100, 0.5)',
+            //   'rgba(200, 0, 100, 0.5)',
+            //   'rgba(200, 0, 100, 0.5)',
+            //   'rgba(200, 0, 100, 0.5)',
+            // ],
             label: 'Dataset 1'
         }],
         labels: [
@@ -70,6 +70,14 @@ var config = {
               fontSize: 28,
               fontColor: 'white'
           },
+        },
+        layout: {
+            padding: {
+                left: 32,
+                right: 32,
+                top: 32,
+                bottom: 32,
+            },
         },
         title: {
           display: false,
@@ -141,15 +149,33 @@ window.onload = function() {
     // On click event for the custom legend
     // It will change the backgroundcolor
     $(".chartLegend").on('click', "li", function() {
-      console.log("Index: " + $(this).index() );
+      //console.log("Index: " + $(this).index() );
+
+      var value = $(this).index() + 1;
+      $(".chartLegend li .circle").removeClass("active");
+      $( ".chartLegend li:nth-child(" + value + ") .circle" ).toggleClass( "active" );
 
       var myData = myDoughnut.data.datasets[0];
       myData.data[ $(this).index() ] += 1;
 
-      myData.backgroundColor[ $(this).index() ] = rColor();
-      myData.hoverBackgroundColor[ $(this).index() ] = Chart.defaults.global.defaultColor;
+
+      var thisPart = myData._meta[0].data[ $(this).index() ];
+      //console.log(thisPart);
+
+      var innerRadius = thisPart._model["innerRadius"];
+      var outerRadius = thisPart._model["outerRadius"];
+
+      var newInner = (innerRadius*1.02);
+      var newOuter = (outerRadius*1.02);
+      outerRadius = newOuter;
+      innerRadius = newInner;
+
+      //myData.backgroundColor[ $(this).index() ] = rColor();
+      //myData.hoverBackgroundColor[ $(this).index() ] = Chart.defaults.global.defaultColor;
 
       myDoughnut.update();
+      myData._meta[0].data[ $(this).index() ]._model["innerRadius"] = (innerRadius*0.98);
+      myData._meta[0].data[ $(this).index() ]._model["outerRadius"] = (outerRadius*1.005);
 
       // // This logs the value of the label
       //console.log(myData.data[$(this).index()]);
