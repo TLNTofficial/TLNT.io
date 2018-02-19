@@ -73,10 +73,10 @@ var config = {
         },
         layout: {
             padding: {
-                left: 32,
-                right: 32,
-                top: 32,
-                bottom: 32,
+                left: 64,
+                right: 64,
+                top: 64,
+                bottom: 64,
             },
         },
         title: {
