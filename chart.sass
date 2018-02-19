@@ -92,57 +92,59 @@ canvas
         font-weight: normal
         span
           font-weight: bold
-      .render
-        padding: (100%/6)
+.column--left
+  .col-content
+    height: 100%
+    .chartLegend
+      height: 100%
+      ul.chart-legend
+        height: 100%
+        padding-right: 1em
+        span.part-ammount
+          display: block
+          color: #fcfdfe
+          font-weight: 700
+        div.circle
+          display: none
+          position: absolute
+          right: -7.55px
+          top: 7px
+          border-color: #1d2d60
+          border-radius: 14px
+          border-style: solid
+          height: 12px
+          width: 12px
+          background-color: #1d2d60
+          &.active
+            display: block
+            -webkit-animation: grow 0.3s ease
+            animation: grow 0.3s ease
+        li.legend-item
+          text-align: right
+          list-style: none
+          position: relative
+          height: 15%
+          padding: 0px 32px 0 0px
+          color: #b3c3db
+          cursor: pointer
+          &::before
+            content: ""
+            position: absolute
+            top: 28px
+            bottom: 0%
+            right: 0px
+            width: 1px
+            background-color: #a4b9d8
+          &:after
+            content: ""
+            position: absolute
+            top: 0px
+            right: -15px
+            width: 25px
+            height: 25px
+            border: #a4b9d8 3px solid
+            border-radius: 25px
+            text-align: center
 
-ul.chart-legend
-  padding-right: 1em
-  span.part-ammount
-    display: block
-    color: #fcfdfe
-    font-weight: 700
-  div.circle
-    display: none
-    position: absolute
-    right: -7.55px
-    top: 21.5px
-    border-color: #1d2d60
-    border-radius: 14px
-    border-style: solid
-    height: 12px
-    width: 12px
-    background-color: #1d2d60
-    &.active
-      display: block
-      -webkit-animation: grow 0.3s ease
-      animation: grow 0.3s ease
-  li.legend-item
-    text-align: right
-    list-style: none
-    position: relative
-    min-height: 48px
-    margin-bottom: 32px
-    padding: 12px 80px 0 0px
-    color: #b3c3db
-    cursor: pointer
-    &::before
-      content: ""
-      position: absolute
-      top: 44px
-      bottom: -50px
-      right: 0px
-      width: 1px
-      background-color: #a4b9d8
-    &:after
-      content: ""
-      position: absolute
-      top: 15px
-      right: -15px
-      width: 25px
-      height: 25px
-      border: #a4b9d8 3px solid
-      border-radius: 25px
-      text-align: center
-
-    &:last-child::before
-      bottom: 100%
+          &:last-child::before
+            bottom: 100%
