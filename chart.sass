@@ -7,36 +7,19 @@ canvas
   clip-path: url(#SVGID_2_)
   fill: rgba(0, 0, 0, 0.6)
 
-.col-content
-
-
 .chart-container
   background-repeat: no-repeat
   background-position: center
 
-.content-chart
 
-  h1
-    text-align: right
-    color: white
-    font-size: 3em
-    margin: 0
-    text-transform: uppercase
-    font-weight: normal
-    span
-      font-weight: bold
-  p
-    text-align: right
-    color: white
-    font-size: 1em
-    margin: 0
-    text-transform: uppercase
-    font-weight: normal
-    span
-      font-weight: bold
-  .render
-    padding: (100%/6)
+
+.content-chart
   .column--center
+    .button-holder
+      display: flex
+      justify-content: center
+      button
+        text-align: center
     .col-content
       background-image: url(images/cubus.png)
       background-position: center 1.5em
@@ -50,6 +33,34 @@ canvas
       background: url(images/world.svg),linear-gradient(to right, #1e60ce 0%,#08398a 100%)
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e60ce', endColorstr='#08398a',GradientType=1 )
       +background-grid-gradient()
+  .column
+    .col-content
+      h1
+        text-align: left
+        color: white
+        font-size: 3em
+        margin: 0
+        margin-bottom: 0.2em
+        text-transform: uppercase
+        font-weight: 500
+        span
+          color: #1e2d60
+      .properties
+        color: white
+        span
+          font-weight: normal
+          display: block
+      p
+        text-align: left
+        color: white
+        font-size: 1em
+        margin: 0
+        margin-bottom: 2em
+        font-weight: normal
+        span
+          font-weight: bold
+      .render
+        padding: (100%/6)
 
 ul.chart-legend
   padding-right: 1em

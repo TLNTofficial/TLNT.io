@@ -60,7 +60,7 @@ var config = {
         ]
     },
     options: {
-        cutoutPercentage: '75',
+        cutoutPercentage: '70',
         responsive: true,
         legend: {
           display: false,
