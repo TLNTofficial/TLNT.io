@@ -92,59 +92,78 @@ canvas
         font-weight: normal
         span
           font-weight: bold
-.column--left
-  .col-content
-    height: 100%
-    .chartLegend
-      height: 100%
-      ul.chart-legend
+.content-chart
+  .column--left
+    .col-content
+      bottom: 0px !important
+      top: 0px !important
+      transform: translateY(0)!important
+      overflow: auto
+      .chartLegend
         height: 100%
-        padding-right: 1em
-        span.part-ammount
-          display: block
-          color: #fcfdfe
-          font-weight: 700
-        div.circle
-          display: none
+        position: relative
+        &::-webkit-scrollbar
+          //display: none
+        ul.chart-legend
           position: absolute
-          right: -7.55px
-          top: 7px
-          border-color: #1d2d60
-          border-radius: 14px
-          border-style: solid
-          height: 12px
-          width: 12px
-          background-color: #1d2d60
-          &.active
-            display: block
-            -webkit-animation: grow 0.3s ease
-            animation: grow 0.3s ease
-        li.legend-item
-          text-align: right
-          list-style: none
-          position: relative
-          height: 15%
-          padding: 0px 32px 0 0px
-          color: #b3c3db
-          cursor: pointer
-          &::before
-            content: ""
-            position: absolute
-            top: 28px
-            bottom: 0%
-            right: 0px
-            width: 1px
-            background-color: #a4b9d8
-          &:after
-            content: ""
-            position: absolute
-            top: 0px
-            right: -15px
-            width: 25px
-            height: 25px
-            border: #a4b9d8 3px solid
-            border-radius: 25px
-            text-align: center
+          top: 0
+          bottom: 0
+          left: 0
+          right: 0
+          overflow: auto
 
-          &:last-child::before
-            bottom: 100%
+          padding: 0px
+          padding-right: 1em
+
+          span.part-ammount
+            display: block
+            color: #fcfdfe
+            font-weight: 700
+          div.circle
+            display: none
+            position: absolute
+            right: -7.55px
+            top: 7px
+            border-color: #1d2d60
+            border-radius: 14px
+            border-style: solid
+            height: 10px
+            width: 10px
+            background-color: #1d2d60
+            &.active
+              display: block
+              -webkit-animation: grow 0.3s ease
+              animation: grow 0.3s ease
+          li.legend-item
+            text-align: right
+            list-style: none
+            position: relative
+            height: 20%
+            padding: 0px 32px 0 0px
+            color: #b3c3db
+            cursor: pointer
+            &:first-child
+              margin-top: 55%
+            &:last-child
+              margin-bottom: 50%
+              &:before
+                width: 0px
+                height: auto
+            &::before
+              content: ""
+              position: absolute
+              top: 28px
+              bottom: 0%
+              right: 0px
+              width: 1px
+              background-color: #a4b9d8
+            &:after
+              content: ""
+              position: absolute
+              top: 0px
+              right: -15px
+              width: 25px
+              height: 25px
+              border: #a4b9d8 3px solid
+              border-radius: 25px
+              text-align: center
