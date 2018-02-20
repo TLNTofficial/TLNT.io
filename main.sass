@@ -168,7 +168,19 @@ header
   &.explaination
     .column
       background: url(images/world_white.svg)
+      &.column--center
+        z-index: 20
       +background-grid-gradient()
+      .col-content
+        text-align: center
+        p
+          width: 150%
+          transform: translateX(-25%)
+          padding: 0 25%
+        img
+          margin-top: 50px
+          width: 200%
+          transform: translateX(-25%)
   &.team
     .column
       background-color: $brand-gray-light
@@ -210,7 +222,7 @@ header
       left: 0
       right: 0
       padding: 20px
-      p
+      .p--large
         font-size: 1.1em
         font-weight: 400
         margin-bottom: 80px
