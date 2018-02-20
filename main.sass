@@ -1,10 +1,13 @@
 $transition: cubic-bezier(.47, 1, .79, .98)
 $shadow: 0px 8px 18px 0px rgba(20,25,50,0.17)
+$shadow-blue: 0px 8px 18px 0px rgba(179,195,219,0.3)
 $shadow__lg: 0px 16px 18px 0px rgba(20,25,50,0.15)
 
 $brand-blue: #024cc7
 $text-blue: #031d47
+$sky-blue: #b3c3db
 $brand-blue-light: #cedffd
+$brand-gray-light: #f5f7fd
 
 @mixin background-grid-gradient
   left: 0
@@ -31,9 +34,6 @@ html, body
   padding: 0
   width: 100%
   font-family: 'Maven Pro', sans-serif
-  background-image: -webkit-linear-gradient(300deg, #f4f6fc 0%, #f9fafc 100%)
-  background-image: -o-linear-gradient(300deg, #f4f6fc 0%, #f9fafc 100%)
-  background-image: linear-gradient(30deg, #f4f6fc 0%, #f9fafc 100%)
 
 nav
   z-index: 20
@@ -160,10 +160,72 @@ header
         background-position: 0 bottom
   &.presale
     .column
-      background-color: $brand-blue-light
+      background-color: $brand-gray-light
+      &.column--center
+        z-index: 20
+      .col-content
+        text-align: center
+        h1
+          font-size: 2.5em
+          text-align: center
+          color: $text-blue
+        p
+          font-size: 1.1em
+          font-weight: 400
+          margin-bottom: 80px
+        .countdown
+          transform: scale(1.4)
+          z-index: 20
+          .countdown--card
+            display: inline-block
+            background-color: white
+            border-radius: 4px
+            width: 22%
+            margin: 0 1.5%
+            box-shadow: $shadow-blue
+            padding: 15px 0
+            .digits
+              font-size: 2.6em
+              font-weight: 500
+              color: $text-blue
+              display: block
+            .unit
+              font-size: .7em
+              font-weight: 400
+              color: $sky-blue
+              display: block
+              text-transform: uppercase
+        form .form_oneline
+          margin-top: 40px
+          display: inline-block
+          background-color: white
+          border-radius: 2em
+          padding: 10px
+          box-shadow: $shadow-blue
+          width: 100%
+          input[type="text"]
+            float: left
+            display: inline
+            font-size: .7em
+            padding: 1.25em 0 1.25em 1.25em
+            border: none
+            background-color: transparent
+            &:focus
+              outline: none
+          input[type="submit"]
+            float: right
+            display: inline
+            font-size: .7em
+            padding: 1.25em 2.5em
+            font-weight: 400
+            box-shadow: none
+            &:hover
+              box-shadow: none
+
+
   &.team
     .column
-      background-color: $brand-blue-light
+      background-color: $brand-gray-light
   &.explaination
     .column
       background: url(images/world_white.svg)
