@@ -354,58 +354,60 @@ canvas {
   font-weight: normal; }
 .content-chart .column .col-content p span {
   font-weight: bold; }
-.content-chart .column .col-content .render {
-  padding: 16.6666666667%; }
 
-ul.chart-legend {
+.column--left .col-content {
+  height: 100%; }
+.column--left .col-content .chartLegend {
+  height: 100%; }
+.column--left .col-content .chartLegend ul.chart-legend {
+  height: 100%;
   padding-right: 1em; }
-ul.chart-legend span.part-ammount {
+.column--left .col-content .chartLegend ul.chart-legend span.part-ammount {
   display: block;
   color: #fcfdfe;
   font-weight: 700; }
-ul.chart-legend div.circle {
+.column--left .col-content .chartLegend ul.chart-legend div.circle {
   display: none;
   position: absolute;
   right: -7.55px;
-  top: 21.5px;
+  top: 7px;
   border-color: #1d2d60;
   border-radius: 14px;
   border-style: solid;
   height: 12px;
   width: 12px;
   background-color: #1d2d60; }
-ul.chart-legend div.circle.active {
+.column--left .col-content .chartLegend ul.chart-legend div.circle.active {
   display: block;
   -webkit-animation: grow 0.3s ease;
   animation: grow 0.3s ease; }
-ul.chart-legend li.legend-item {
+.column--left .col-content .chartLegend ul.chart-legend li.legend-item {
   text-align: right;
   list-style: none;
   position: relative;
-  min-height: 48px;
-  margin-bottom: 32px;
-  padding: 12px 80px 0 0px;
+  height: 15%;
+  padding: 0px 32px 0 0px;
   color: #b3c3db;
   cursor: pointer; }
-ul.chart-legend li.legend-item::before {
+.column--left .col-content .chartLegend ul.chart-legend li.legend-item::before {
   content: "";
   position: absolute;
-  top: 44px;
-  bottom: -50px;
+  top: 28px;
+  bottom: 0%;
   right: 0px;
   width: 1px;
   background-color: #a4b9d8; }
-ul.chart-legend li.legend-item:after {
+.column--left .col-content .chartLegend ul.chart-legend li.legend-item:after {
   content: "";
   position: absolute;
-  top: 15px;
+  top: 0px;
   right: -15px;
   width: 25px;
   height: 25px;
   border: #a4b9d8 3px solid;
   border-radius: 25px;
   text-align: center; }
-ul.chart-legend li.legend-item:last-child::before {
+.column--left .col-content .chartLegend ul.chart-legend li.legend-item:last-child::before {
   bottom: 100%; }
 
 /*# sourceMappingURL=main.min.css.map */

@@ -99,6 +99,26 @@ function rColor() {
 }
 
 window.onload = function() {
+
+
+  var draw = Chart.controllers.doughnut.prototype.draw;
+    Chart.controllers.doughnut = Chart.controllers.doughnut.extend({
+      draw: function() {
+          draw.apply(this, arguments);
+          let ctx = this.chart.chart.ctx;
+          let _fill = ctx.fill;
+          ctx.fill = function() {
+              ctx.save();
+              ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+              ctx.shadowBlur = 30;
+              ctx.shadowOffsetX = 1;
+              ctx.shadowOffsetY = 1;
+              _fill.apply(this, arguments)
+              ctx.restore();
+          }
+      }
+    });
+
     // Define chart
     var ctx = $("#chart-area");
     var myDoughnut = new Chart(ctx, config);
@@ -158,3 +178,5 @@ window.onload = function() {
       myData._meta[0].data[ currentVal ]._model["outerRadius"] = (outerRadius*1.007);
     }
 };
+
+$('.chart-legend').scrollbar();
