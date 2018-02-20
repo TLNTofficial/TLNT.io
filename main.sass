@@ -2,12 +2,27 @@ $transition: cubic-bezier(.47, 1, .79, .98)
 $shadow: 0px 8px 18px 0px rgba(20,25,50,0.17)
 $shadow-blue: 0px 8px 18px 0px rgba(179,195,219,0.3)
 $shadow__lg: 0px 16px 18px 0px rgba(20,25,50,0.15)
+$shadow__xl: 0px 50px 76px 0px rgba(9,58,103,0.39)
 
 $brand-blue: #024cc7
 $text-blue: #031d47
 $sky-blue: #b3c3db
 $brand-blue-light: #cedffd
 $brand-gray-light: #f5f7fd
+
+@mixin aspect-ratio($width, $height)
+  position: relative
+  &:before
+    display: block
+    content: ""
+    width: 100%
+    padding-top: ($height / $width) * 100%
+  > .content
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
 
 @mixin background-grid-gradient
   left: 0
@@ -34,7 +49,12 @@ html, body
   padding: 0
   width: 100%
   font-family: 'Maven Pro', sans-serif
-
+  @media screen and (min-width: 1500)
+    padding: 0 200px
+  @media screen and (min-width: 1700)
+    padding: 0 300px
+  @media screen and (min-width: 1900)
+    padding: 0 400px
 nav
   z-index: 20
   padding: 4em 4em 0 4em
@@ -110,11 +130,7 @@ header
   color: #fff
 
 .content-block
-  width: 100%
-  height: 120vh
-  // background-color: #eee
-  // outline: 1px solid green
-  margin-bottom: 0
+
   &.header
     padding-top: 0
     .column
@@ -181,9 +197,36 @@ header
           margin-top: 50px
           width: 200%
           transform: translateX(-25%)
+    .video-box
+      width: 200%
+      transform: translateX(-25%)
+      box-shadow: $shadow__xl
+      .video
+        @include aspect-ratio(16, 9)
+        background: linear-gradient(to bottom, rgba(3,29,71,0) 0%, rgba(3,29,71,1) 100%), url("images/Video_screen.png"), $brand-blue
+        background-size: cover
+        background-position: center
+        .content
+          img
+            height: 20%
+            width: auto
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            margin: 0
   &.team
     .column
       background-color: $brand-gray-light
+  width: 100%
+  height: 120vh
+  // background-color: #eee
+  // outline: 1px solid green
+  margin-bottom: 0
+  &.content-block--tall
+    height: 150vh
+    .column
+      height: 84%!important
   .column
     height: 80%
     width: (100%/3)
