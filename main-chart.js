@@ -109,8 +109,8 @@ window.onload = function() {
           let _fill = ctx.fill;
           ctx.fill = function() {
               ctx.save();
-              ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-              ctx.shadowBlur = 30;
+              ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+              ctx.shadowBlur = 10;
               ctx.shadowOffsetX = 1;
               ctx.shadowOffsetY = 1;
               _fill.apply(this, arguments)
@@ -146,17 +146,10 @@ window.onload = function() {
     // On click event for the custom legend
     // It will change the backgroundcolor
     $(".chartLegend").on('click', "li", function() {
-      //console.log("Index: " + $(this).index() );
 
       var value = $(this).index() + 1;
       $(".chartLegend li .circle").removeClass("active");
       $( ".chartLegend li:nth-child(" + value + ") .circle" ).toggleClass( "active" );
-
-      // Makes the chart bigger if clicked on the a label
-      //myData.data[ $(this).index() ] += 1;
-
-      //myData.backgroundColor[ $(this).index() ] = rColor();
-      //myData.hoverBackgroundColor[ $(this).index() ] = Chart.defaults.global.defaultColor;
 
       // Update
       myDoughnut.update();
@@ -178,5 +171,3 @@ window.onload = function() {
       myData._meta[0].data[ currentVal ]._model["outerRadius"] = (outerRadius*1.007);
     }
 };
-
-$('.chart-legend').scrollbar();
