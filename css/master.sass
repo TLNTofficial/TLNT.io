@@ -11,7 +11,7 @@ $default-font: 'Open Sans', sans-serif
 
 //General styles
 h1, h2, h3, h4, h5, h6
-  font-weight: 400
+  font-weight: 300
   font-family: $brand-font
   span
     font-weight: 700
@@ -87,10 +87,10 @@ nav.navbar
           top: 50%
           left: 50%
           z-index: -1
-          transform: translate(-50%, -55%)
+          transform: translate(-50%, -70%)
           background-image: url('../assets/images/hexagon.svg')
-          width: 50vw
-          height: 50vw
+          width: 40vw
+          height: 40vw
           background-size: contain
           background-position: center
           background-repeat: no-repeat
@@ -149,7 +149,7 @@ nav.navbar
 
 header
   h1
-    font-size: 4em
+    font-size: 3.5em
     margin-bottom: .75em
   p
     font-size: 1em
@@ -157,7 +157,14 @@ header
     &.subtitle
       font-size: 1.5em
       margin-bottom: .25em
-
+  .form-wrap
+    margin-top: 4em
+    .form_oneline
+      margin-top: 0
+  .imageWrapper
+    @include aspect-ratio(3,4)
+    img
+      width: 125%
 
 
 @import "bottom"
