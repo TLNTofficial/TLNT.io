@@ -220,7 +220,14 @@ article
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-
+    .content
+      padding: 0em 4em
+      p
+        font-family: "Open Sans Light",sans-serif
+        font-weight: 300
+        font-size: 1.2em
+        margin-top: 1em
+        margin-bottom: 2em
   &.pilot
     .content
       padding: 0em 4em
@@ -228,10 +235,16 @@ article
         margin-bottom: 1em
         span
           color: $icasting-red
+      p
+        font-family: "Open Sans Light",sans-serif
+        font-weight: 300
+        font-size: 1.2em
+        margin-top: 1em
+        margin-bottom: 2em
       input[type="submit"]
         margin-top: 2em
     img
-      width: 100%
+      height: 100%
 
   &.stats
     .single_stat
@@ -244,7 +257,7 @@ article
       p
         color: #8d9197
         font-size: 0.9em
-        padding: 0em 1em 1em 1em 
+        padding: 0em 1em 1em 1em
       @media (max-width: 768px)
         span
           font-size: 2.5rem
