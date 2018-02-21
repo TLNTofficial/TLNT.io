@@ -154,6 +154,10 @@ header .imageWrapper > .content {
 header .imageWrapper img {
   width: 125%; }
 
+article.pilot h2 span {
+  color: #df1f36; }
+article.pilot input[type="submit"] {
+  margin-top: 2em; }
 article.stats .single_stat span {
   color: #df1f36;
   font-weight: 700;
