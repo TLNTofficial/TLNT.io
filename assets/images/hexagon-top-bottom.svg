@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="1120" height="1270" viewBox="0 0 1120 1270">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #eef8ff;
+        filter: url(#gradient-overlay-1);
+        fill-rule: evenodd;
+      }
+    </style>
+
+    <filter id="gradient-overlay-1" filterUnits="userSpaceOnUse">
+      <feImage x="0" y="0" width="1120" height="1270" preserveAspectRatio="none" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTEyMCIgaGVpZ2h0PSIxMjcwIj48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iOTUyLjExNiIgeTE9Ijc1IiB4Mj0iMTY3Ljg4NCIgeTI9IjExOTUiPgogIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2VlZjhmZiIvPgogIDxzdG9wIG9mZnNldD0iMC4wMSIgc3RvcC1jb2xvcj0iI2VlZjhmZiIvPgogIDxzdG9wIG9mZnNldD0iMC42MiIgc3RvcC1jb2xvcj0iI2ZhZmRmZiIvPgogIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmZiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIi8+PC9zdmc+"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend in2="SourceGraphic" result="gradientFill"/>
+    </filter>
+  </defs>
+  <path d="M1119.989,373.067 C1119.989,402.370 1119.530,891.123 1119.530,891.123 C1119.530,891.123 1122.875,950.107 1056.524,989.352 C1004.900,1019.884 584.394,1256.016 560.554,1269.402 L560.554,1270.004 C560.554,1270.004 560.361,1269.895 560.019,1269.702 C559.676,1269.895 559.482,1270.004 559.482,1270.004 L559.482,1269.399 C535.647,1255.952 115.349,1018.827 63.069,989.352 C-0.218,953.671 0.007,891.123 0.007,891.123 C0.007,891.123 0.658,402.370 0.658,373.067 C0.658,343.764 21.028,315.784 21.028,315.784 C21.028,315.784 21.334,315.962 21.914,316.299 L21.073,315.784 C21.073,315.784 38.496,286.792 98.315,252.629 C158.135,218.464 498.571,21.055 498.571,21.055 C498.571,21.055 532.527,0.003 559.482,0.003 C586.436,0.003 624.968,21.055 624.968,21.055 C624.968,21.055 963.116,216.176 1022.936,250.341 C1082.755,284.505 1097.890,315.784 1097.890,315.784 L1085.846,323.162 C1094.015,318.410 1098.528,315.784 1098.528,315.784 C1098.528,315.784 1119.989,343.764 1119.989,373.067 Z" class="cls-1"/>
+</svg>
