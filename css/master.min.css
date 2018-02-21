@@ -4,16 +4,22 @@ h1, h2, h3, h4, h5, h6 {
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   font-weight: 700; }
 
-html {
-  font-family: "Maven Pro", sans-serif; }
+html, body {
+  font-family: "Maven Pro", sans-serif;
+  color: #00112a; }
 
 nav.navbar .navbar-brand {
   height: 3.5em;
   width: 3.5em; }
+nav.navbar .navbar-brand:first-of-type .logoWrap {
+  position: relative; }
 nav.navbar .navbar-brand:first-of-type .logoWrap::before {
   content: "";
   position: absolute;
+  top: 50%;
+  left: 50%;
   z-index: -1;
+  transform: translate(-50%, -55%);
   background-image: url("../assets/images/hexagon.svg");
   width: 50vw;
   height: 50vw;
@@ -41,6 +47,9 @@ nav.navbar .navbar-nav .nav-item {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   color: #0552e2; }
+nav.navbar .navbar-nav .nav-item.active {
+  color: #0552e2;
+  font-weight: 400; }
 nav.navbar .navbar-nav .nav-item span.lowercase {
   text-transform: lowercase; }
 nav.navbar .navbar-nav .nav-item::after {
