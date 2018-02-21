@@ -1,3 +1,36 @@
-
+nav {
+  padding: 1em 0; }
+nav .mainLogo .logoWrap img {
+  width: 100%; }
+nav .navigation {
+  position: relative; }
+nav .navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+nav .navigation ul li {
+  display: inline-block;
+  padding: 0 1.5em;
+  margin: 0;
+  position: relative;
+  line-height: 1; }
+nav .navigation ul li::after {
+  content: "";
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #97aacd;
+  position: absolute; }
+nav .navigation ul li:last-of-type::after {
+  content: "";
+  width: 0; }
+nav .navigation ul li a {
+  text-transform: uppercase;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  color: #0552e2; }
 
 /*# sourceMappingURL=master.min.css.map */
