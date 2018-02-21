@@ -188,6 +188,12 @@ article
     z-index: 0
     display: flex
     position: relative
+    &.content--left
+      &::before
+        background-image: url('../assets/images/hexagon-left.svg')
+    &.content--right
+      &::before
+        background-image: url('../assets/images/hexagon-right.svg')
     &::before
       content: ""
       position: absolute
@@ -195,9 +201,8 @@ article
       top: 0%
       left: 50%
       transform: translate(-50%, -10%)
-      background-image: url('../assets/images/hexagon-top-bottom.svg')
-      width: 70vw
-      height: 70vw
+      width: 50vw
+      height: 50vw
       background-size: contain
       background-position: center
       background-repeat: no-repeat
@@ -302,4 +307,3 @@ footer
         margin: -1rem -1rem -1rem auto
         float: right
         line-height: 1
-    .modal-body
