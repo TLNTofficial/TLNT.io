@@ -12,4 +12,4 @@ node_modules
 
 local/
 
-main.min.css.map
+css/master.min.css.map
