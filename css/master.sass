@@ -180,22 +180,47 @@ header
     @include aspect-ratio(3,4)
     img
       width: 125%
+      z-index: -1
 
 
 article
+  .content
+    z-index: 0
+    display: flex
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      z-index: -1
+      top: 0%
+      left: 50%
+      transform: translate(-50%, -10%)
+      background-image: url('../assets/images/hexagon-top-bottom.svg')
+      width: 70vw
+      height: 70vw
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
   &.video
+    margin-bottom: 15%
     .imageWrapper
-      @include aspect-ratio(1, 1)
-      .content
-        background-image: url("../assets/images/video-grab.png")
-
-        clip-path: url("#hexaClip")
-
-      img
-        height: 100%
-        background-image: url("assets/images/video-grab.png")
-        clip-path: url("#hexaClip")
+      z-index: 2
+      position: relative
+      img.main-image
+        // box-shadow: 33px 0px 57px rgba(46, 90, 130, 0.32)
+        -webkit-filter: drop-shadow(0 33px 57px rgba(46, 90, 130, 0.32))
+        -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=33, Color='#2e5a82')"
+        filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=33, Color='#2e5a82')"
+        width: 100%
+        background-image: url("/images/video-grab.png")
         text-align: center
+      img.play-icon
+        width: 15%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
   &.pilot
     .content
       padding: 0em 4em
