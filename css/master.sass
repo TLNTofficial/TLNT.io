@@ -41,6 +41,7 @@ html, body
   &:active
     background-color: darken($brand-blue, 10%)
   &:focus
+    outline: 0
 
 form .form_oneline
   margin: 20px 0
@@ -182,6 +183,19 @@ header
 
 
 article
+  &.video
+    .imageWrapper
+      @include aspect-ratio(1, 1)
+      .content
+        background-image: url("../assets/images/video-grab.png")
+
+        clip-path: url("#hexaClip")
+
+      img
+        height: 100%
+        background-image: url("assets/images/video-grab.png")
+        clip-path: url("#hexaClip")
+        text-align: center
   &.pilot
     .content
       padding: 0em 4em
@@ -227,12 +241,12 @@ article
     display: flex
     align-items: center
     .container-fluid
-    img
-      width: 12.5%
-      color: #fff
-    h1
-      margin: .5rem 0px
-      font-size: 4.0rem
+      img
+        width: 12.5%
+        color: #fff
+      h1
+        margin: .5rem 0px
+        font-size: 4.0rem
 footer
   font-family: $default-font
   .container
