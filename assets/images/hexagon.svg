@@ -2,8 +2,9 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #eef8ff;
-        filter: url(#gradient-overlay-1);
+        <!-- fill: #eef8ff; -->
+        fill: #ff0000;
+        <!-- filter: url(#gradient-overlay-1); -->
         fill-rule: evenodd;
       }
     </style>
