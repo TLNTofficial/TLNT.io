@@ -3,12 +3,16 @@ $brand-blue-light: #f4fbff
 $brand-dark: #00112a
 $icasting-red: #df1f36
 $brand-grey: #97aacd
-$default-font: 'Maven Pro', sans-serif
+
+
+$brand-font: 'Ubuntu', sans-serif
+$default-font: 'Open Sans', sans-serif
+
 
 //General styles
 h1, h2, h3, h4, h5, h6
   font-weight: 400
-  font-family: $default-font
+  font-family: $brand-font
   span
     font-weight: 700
 
@@ -143,6 +147,16 @@ nav.navbar
           height: 1px
           background-color: $brand-grey
           position: absolute
+
+header
+  h1
+    font-size: 4em
+  p
+    font-size: 1em
+    font-family: $default-font
+    &.subtile
+      font-size: 1.1em
+
 
 
 @import "bottom"
