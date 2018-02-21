@@ -26,7 +26,7 @@
           <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link active" href="#">tlnt <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#"><span class="lowercase">i</span>casting</a>
-            <a class="nav-item nav-link" href="#">Watch video &#8227;</a>
+            <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#videoModal">Watch video &#8227;</a>
           </div>
         </div>
         <a class="navbar-brand d-none d-lg-block" href="#">
@@ -75,10 +75,10 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <h2>iCasting & TLNT in a nutshell</h2>
+          <div class="col-md-6 content">
+            <h2>iCasting & TLNT in <span>a nutshell</span></h2>
             <p>We believe in the power of a self-sustaining community of talents and clients.</p>
-            <input type="submit" class="btn" value="Watch video">
+            <button type="submit" class="btn" data-toggle="modal" data-target="#videoModal" value="Watch video"> Watch video</button>
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@
           <div class="col-md-6 content">
             <h2>Our pilot community: <span>iCasting</span> </h2>
             <p>iCasting will introduce the Talent coin in 2018. The talent voin will facilitate all transactions and smart contracts between clients and talents, transforming the thriving community into self sustaining casting platform.</p>
-            <input type="submit" class="btn" value="More about iCasting">
+            <button type="submit" class="btn" value="More about iCasting">
           </div>
           <div class="col-md-6">
             <img src="assets/images/Phone.png" alt="Phone">
@@ -160,6 +160,23 @@
       </div>
     </footer>
 
+    <!-- Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+              Close
+            </button>
+            <!-- <button type="button" class="btn" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button> -->
+          </div>
+          <div class="modal-body">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/qy13FavwqPo" allow="encrypted-media autoplay" allowfullscreen></iframe>
+            </div>
+          </div>
+      </div>
+    </div>
     <!-- Javascript includes -->
     <script src="assets/js/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="assets/js/popper.min.js" charset="utf-8"></script>
