@@ -13,3 +13,4 @@ node_modules
 local/
 
 css/master.min.css.map
+css/master.min.css

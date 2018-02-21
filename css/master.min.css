@@ -115,12 +115,14 @@ nav.navbar .navbar-nav .nav-item:last-of-type::after {
     position: absolute; } }
 
 header h1 {
-  font-size: 4em; }
+  font-size: 4em;
+  margin-bottom: 0.75em; }
 header p {
   font-size: 1em;
   font-family: "Open Sans", sans-serif; }
-header p.subtile {
-  font-size: 1.1em; }
+header p.subtitle {
+  font-size: 1.5em;
+  margin-bottom: 0.25em; }
 
 .btn {
   cursor: pointer;
@@ -137,8 +139,6 @@ header p.subtile {
 .btn.btn__blue:active {
   background-color: #0040d1; }
 
-article.stats .single_stat {
-  padding: 4em; }
 article.stats .single_stat span {
   color: #df1f36;
   font-weight: 700;
@@ -147,6 +147,19 @@ article.stats .single_stat h3 {
   font-weight: 700; }
 article.stats .single_stat p {
   color: #8d9197; }
+@media (max-width: 768px) {
+  article.stats .single_stat span {
+    font-size: 2.5rem; }
+  article.stats .single_stat p {
+    padding: 0em 2em; } }
+@media (min-width: 768px) {
+  article.stats .single_stat {
+    padding: 1.5em 2em 2em 2em; }
+  article.stats .single_stat span {
+    font-size: 3rem; } }
+@media (min-width: 992px) {
+  article.stats .single_stat {
+    padding: 1.5em 4em 4em 4em; } }
 article.launch {
   background-color: #00112a;
   background-image: url(../assets/images/World.png);
