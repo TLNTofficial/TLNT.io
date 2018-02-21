@@ -3,6 +3,10 @@ $brand-blue-light: #f4fbff
 $brand-dark: #00112a
 $icasting-red: #df1f36
 $brand-grey: #97aacd
+$default-font: 'Maven Pro', sans-serif
+
+html
+  font-family: $default-font
 
 @mixin aspect-ratio($width, $height)
   position: relative
@@ -56,3 +60,5 @@ nav
           font-family: 'Ubuntu', sans-serif
           font-weight: 300
           color: $brand-blue
+
+@import "bottom"
