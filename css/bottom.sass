@@ -14,13 +14,24 @@ $main-color: rgba(5, 81, 266, 1)
     &:active
       background-color: darken($main-color, 10%)
 article
+  &.stats
+    .single_stat
+      padding: 4em
+      span
+        color: $icasting-red
+        font-weight: 700
+        font-size: 4rem
+      h3
+        font-weight: 700
+      p
+        color: #8d9197
   &.launch
     background-color: $brand-dark
     background-image: url(../assets/images/World.png)
     background-position: center
     background-repeat: no-repeat
     color: #fff
-    height: 80vh
+    height: 65vh
     display: flex
     align-items: center
     .container-fluid
@@ -29,6 +40,7 @@ article
       color: #fff
     h1
       margin: .5rem 0px
+      font-size: 4.0rem
 footer
   font-family: $default-font
   .container
