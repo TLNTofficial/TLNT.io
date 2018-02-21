@@ -16,7 +16,6 @@ $main-color: rgba(5, 81, 266, 1)
 article
   &.stats
     .single_stat
-      padding: 4em
       span
         color: $icasting-red
         font-weight: 700
@@ -25,6 +24,19 @@ article
         font-weight: 700
       p
         color: #8d9197
+
+      @media (max-width: 768px)
+        span
+          font-size: 2.5rem
+        p
+          padding: 0em 2em
+      @media (min-width: 768px)
+        padding: 1.5em 2em 2em 2em
+        span
+          font-size: 3rem
+      @media (min-width: 992px)
+        padding: 1.5em 4em 4em 4em
+
   &.launch
     background-color: $brand-dark
     background-image: url(../assets/images/World.png)
