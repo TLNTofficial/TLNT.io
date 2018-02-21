@@ -13,12 +13,33 @@ $main-color: rgba(5, 81, 266, 1)
       background-color: darken($main-color, 5%)
     &:active
       background-color: darken($main-color, 10%)
+article
+  &.launch
+    background-color: $brand-dark
+    background-image: url(../assets/images/World.png)
+    background-position: center
+    background-repeat: no-repeat
+    color: #fff
+    height: 80vh
+    display: flex
+    align-items: center
+    .container-fluid
+    img
+      width: 12.5%
+      color: #fff
+    h1
+      margin: .5rem 0px
 footer
   font-family: $default-font
   .container
     .top-layer
+      margin-top: 10%
+      h2
+        margin-bottom: 1.5em
+      p
+        margin: 0px
       .input-group
-        margin: 40px 0px
+        margin: 0px 0px 40px 0px
         background-color: white
         border-radius: 2em
         padding: 10px
@@ -27,15 +48,14 @@ footer
           font-size: .8em
           padding: 1.25em 0 1.25em 1.25em
           border-radius: 2em
-          margin-right: -30%
           &:focus
-            border: none
             outline: none
-            z-index: 0
+            z-index: 1
             box-shadow: 0 0 0.2rem rgba(255,255,255,.25)
         .btn__blue
           padding: 1.1em 2.5em
           border-radius: 2em
+          float: right
     .bottom-layer
       .footer-logo
         height: 10%
