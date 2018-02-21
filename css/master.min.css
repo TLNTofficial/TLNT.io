@@ -2,6 +2,11 @@ nav {
   padding: 1em 0; }
 nav .mainLogo .logoWrap img {
   width: 100%; }
+nav .secLogo .logoWrap {
+  height: 100%; }
+nav .secLogo .logoWrap img {
+  vertical-align: middle;
+  height: 50%; }
 nav .navigation {
   position: relative; }
 nav .navigation ul {
