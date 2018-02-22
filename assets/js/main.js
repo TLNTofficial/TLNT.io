@@ -11,7 +11,7 @@ $.fn.isInViewport = function() {
 var countUp = 0;
 
 $(window).on('resize scroll', function() {
-  $('.counter').each(function() {
+  $('.stats__single--counter').each(function() {
     if ($(this).isInViewport()) {
       if(countUp < 3){
         var fullNum = $(this).text();

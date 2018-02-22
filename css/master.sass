@@ -1,11 +1,16 @@
-//Branding colors
-$brand-blue: #0552e2
-$brand-blue-light: #f4fbff
-$brand-dark: #00112a
-$brand-grey: #97aacd
+/**
+ * Sass stylesheet for TLNT Official
+ *
+ * Sass version 3.5.5 (Bleeding Edge)
+ *
+ * @category   Stylesheet
+ * @author     Sem Spanhaak
+ * @author     Demien Drost
+ * @author URI https://www.iqmedia.nl
+ * @copyright  2018 IQ-Media B.V.
+ * @version    v.1.0.0
+ */
 
-//Alternative colors
-$icasting-red: #df1f36
 
 //Import fonts
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400)
@@ -20,11 +25,39 @@ $fw-light: 300
 $fw-regular: 400
 $fw-bold: 700
 
+
+//Branding colors
+$brand-blue: #0552e2
+$brand-blue-light: #f4fbff
+$brand-dark: #00112a
+$brand-grey: #97aacd
+
+//Alternative colors
+$icasting-red: #df1f36
+
+
+//Mixins
+@mixin aspect-ratio($width, $height)
+  position: relative
+  &:before
+    display: block
+    content: ""
+    width: 100%
+    padding-top: ($height / $width) * 100%
+  > .content
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+
+
 //General styles
 html, body
   font-family: $default-font
   color: $brand-dark
   overflow-x: hidden
+
 
 h1, h2, h3, h4, h5, h6
   font-weight: $fw-light
@@ -32,10 +65,12 @@ h1, h2, h3, h4, h5, h6
   span
     font-weight: $fw-bold
 
+
 a
   &:focus
     outline: 0
     box-shadow: none
+
 
 .btn
   cursor: pointer
@@ -54,58 +89,45 @@ a
     text-transform: uppercase
     font-weight: $fw-light
   &:hover
-    box-shadow: none
-  &:hover
-    background-color: darken($brand-blue, 5%)
+    background-color: lighten($brand-blue, 5%)
+    box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.30)!important
   &:active
     background-color: darken($brand-blue, 10%)
   &:focus
     outline: 0
     box-shadow: none
-form
-  &.form_oneline
-  margin: 20px 0
-  display: inline-block
-  background-color: white
-  border-radius: 2em
-  padding: 10px
-  box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.55)
-  width: 100%
-  position: relative
-  input[type="text"]
-    float: left
-    position: absolute
-    left: 2em
-    top: 50%
-    transform: translateY(-50%)
-    width: calc(100% - 12em)
-    display: inline
-    font-size: .9em
-    border: none
-    background-color: transparent
-    font-weight: $fw-light
-    &:focus
-      outline: none
-  input[type="submit"]
-    float: right
-    z-index: 100
-    &:hover
-      box-shadow: none
 
-//Mixins
-@mixin aspect-ratio($width, $height)
-  position: relative
-  &:before
-    display: block
-    content: ""
+
+form
+  .form__oneline
+    margin: 20px 0
+    display: inline-block
+    background-color: white
+    border-radius: 2em
+    padding: 6px
+    box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.55)
     width: 100%
-    padding-top: ($height / $width) * 100%
-  > .content
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
+    position: relative
+    input[type="text"]
+      float: left
+      position: absolute
+      left: 2em
+      top: 50%
+      transform: translateY(-50%)
+      width: calc(100% - 12em)
+      display: inline
+      font-size: .9em
+      border: none
+      background-color: transparent
+      font-weight: $fw-light
+      &:focus
+        outline: none
+    input[type="submit"]
+      float: right
+      z-index: 100
+      &:hover
+        box-shadow: none
+
 
 //Dedicated styles
 nav
@@ -182,6 +204,7 @@ nav
             background-color: $brand-grey
             position: absolute
 
+
 header
   h1
     font-size: 3.5em
@@ -191,18 +214,18 @@ header
   p
     font-size: 1em
     font-family: $default-font
-    &.subtitle
+    &.paragraph-preface
       font-size: 1.5em
       margin-bottom: .25em
-  .form-wrap
+  .form--wrap
     margin-top: 4em
-    .form_oneline
+    .form__oneline
       margin-top: 0
     @media (max-width: 768px)
       margin-top: 4em
-      .form_oneline
+      .form__oneline
         margin: 0 0
-  .imageWrapper
+  .image-wrapper
     @include aspect-ratio(3,4)
     img
       width: 125%
@@ -210,7 +233,9 @@ header
       @media (max-width: 768px)
         width: 100%
 
+
 article
+  //Main article styles
   .content
     z-index: 0
     display: flex
@@ -233,18 +258,20 @@ article
       background-size: contain
       background-position: center
       background-repeat: no-repeat
+
+  //Dedicated article styles
   &.video
     margin-bottom: 15%
-    .imageWrapper
+    .image-wrapper
       z-index: 2
       position: relative
-      img.main-image
+      img.video-preview__image
         -webkit-filter: drop-shadow(0 33px 57px rgba(46, 90, 130, 0.32))
         -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=33, Color='#2e5a82')"
         filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=33, Color='#2e5a82')"
         width: 100%
         text-align: center
-      img.play-icon
+      img.video-preview__play-icon
         width: 15%
         position: absolute
         top: 50%
@@ -260,6 +287,8 @@ article
         font-size: 1.2em
         margin-top: 1em
         margin-bottom: 2em
+
+
   &.pilot
     .content
       padding: 0em 4em
@@ -280,8 +309,9 @@ article
     img
       width: 100%
 
+
   &.stats
-    .single_stat
+    .stats__single
       span
         color: $icasting-red
         font-weight: $fw-bold
@@ -304,6 +334,7 @@ article
       @media (min-width: 992px)
         padding: 1.5em 4em 4em 4em
 
+
   &.launch
     background-color: $brand-dark
     background-image: url(../assets/images/World.png)
@@ -318,10 +349,12 @@ article
       h1
         margin: .5rem 0px
         font-size: 4.0rem
+
+
 footer
   font-family: $default-font
   .container
-    .top-layer
+    .footer__top
       margin-top: 10%
       h2
         margin-bottom: 1.5em
@@ -331,15 +364,17 @@ footer
         max-width: 75%
         @media (max-width: 768px)
           max-width: 100%
-    .bottom-layer
+    .footer__bottom
       margin: 4em 0em 8em 0em
-      .footer-logo
+      .footer__bottom--logo
         height: 2.2em
         width: auto
         margin-bottom: 2.5%
-      .tlnt__copy
+      .footer__bottom--copyright
         font-size: 0.8em
         color: #97aacd
+
+
 .modal
   .modal-content
     background-color: transparent
