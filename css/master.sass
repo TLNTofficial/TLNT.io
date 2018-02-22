@@ -71,6 +71,13 @@ a
     outline: 0
     box-shadow: none
 
+img
+  user-drag: none
+  user-select: none
+  -moz-user-select: none
+  -webkit-user-drag: none
+  -webkit-user-select: none
+  -ms-user-select: none
 
 .btn
   cursor: pointer
@@ -132,9 +139,11 @@ form
 //Dedicated styles
 nav
   &.navbar
+    .container
+      padding-top: 3em
     .navbar-brand
-      height: 3.5em
-      width: 3.5em
+      height: 3em
+      width: 3em
       &:first-of-type
         .logoWrap
           position: relative
