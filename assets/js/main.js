@@ -35,3 +35,11 @@ $(window).on('resize scroll', function() {
     }
   })
 })
+
+
+$(document).on("ready", function() {
+  var d = $( ".pilot .content--left" );
+  var offset = d.offset();
+
+  console.log("is at " + offset.left + "," + offset.top + " of document");
+});
