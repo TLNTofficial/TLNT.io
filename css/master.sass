@@ -1,3 +1,14 @@
+// notes
+// @media (min-width: 576px)
+// @media (min-width: 768px)
+// @media (min-width: 992px)
+// @media (min-width: 1200px)
+// @media (max-width: 575.98px)
+// @media (max-width: 767.98px)
+// @media (max-width: 991.98px)
+// @media (max-width: 1199.98px)
+
+
 /**
  * Sass stylesheet for TLNT Official
  *
@@ -14,7 +25,7 @@
 
 //Import fonts
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400)
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700)
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700)
 
 //Included fonts
 $brand-font: 'Ubuntu', sans-serif
@@ -51,6 +62,41 @@ $icasting-red: #df1f36
     right: 0
     bottom: 0
 
+
+@mixin add-transition
+  transition: cubic-bezier(0.4, 0.0, 1, 1)
+  @media (max-width: 767.98px)
+    transition-duration: .4s
+    transition-delay: .1s
+  @media (min-width: 768px)
+    transition-duration: .2s
+    transition-delay: .05s
+  &:hover
+    transition: cubic-bezier(0.0, 0.0, 0.2, 1)
+    @media (max-width: 767.98px)
+      transition-duration: .3s
+      transition-delay: 0s
+    @media (min-width: 768px)
+      transition-duration: .15s
+      transition-delay: 0s
+
+@mixin add-transition-in
+  transition: cubic-bezier(0.0, 0.0, 0.2, 1)
+  @media (max-width: 767.98px)
+    transition-duration: .3s
+    transition-delay: 0s
+  @media (min-width: 768px)
+    transition-duration: .15s
+    transition-delay: 0s
+
+@mixin add-transition-out
+  transition: cubic-bezier(0.4, 0.0, 1, 1)
+  @media (max-width: 767.98px)
+    transition-duration: .4s
+    transition-delay: .1s
+  @media (min-width: 768px)
+    transition-duration: .2s
+    transition-delay: .05s
 
 //General styles
 html, body
@@ -92,6 +138,7 @@ img
   font-family: $brand-font
   font-weight: $fw-regular
   letter-spacing: .1rem
+  +add-transition
   span.arrow
     text-transform: uppercase
     font-weight: $fw-light
@@ -141,6 +188,65 @@ nav
   &.navbar
     .container
       padding-top: 3em
+      button.navbar-toggler
+        z-index: 30
+        padding: 15px
+        border-radius: 2em
+        background-color: $brand-blue
+        box-shadow: 0px 8px 24px rgba(30, 64, 135, 0.45), 0 0 0 0 rgba($brand-blue, 1)
+        position: relative
+        border: none
+        &:focus
+          outline: none
+        &[aria-expanded="false"]
+          +add-transition-out
+        &[aria-expanded="true"]
+          +add-transition-in
+          background-color: white
+          box-shadow: 0 0 0 rgba(0,0,0,0.45), 0 0 0 100vh rgba($brand-blue, 1)
+        .line
+          width: 1.2em
+          height: .2em
+          background-color: #fff
+          display: block
+          margin-bottom: .3em
+          border-radius: 2em
+          +add-transition-in
+          &:last-of-type
+            margin-bottom: 0
+        &[aria-expanded="true"]
+          .line
+            background-color: $brand-blue
+            &:nth-child(2)
+              opacity: 0
+            &:nth-child(1)
+              -webkit-transform: translateY(10px) rotate(45deg)
+              -ms-transform: translateY(10px) rotate(45deg)
+              -o-transform: translateY(10px) rotate(45deg)
+              transform: translateY(10px) rotate(45deg)
+            &:nth-child(3)
+              -webkit-transform: translateY(-10px) rotate(-45deg)
+              -ms-transform: translateY(-10px) rotate(-45deg)
+              -o-transform: translateY(-10px) rotate(-45deg)
+              transform: translateY(-10px) rotate(-45deg)
+    .navbar-collapse
+      @media (max-width: 991.98px)
+        padding: 20px
+        width: 70%
+        z-index: 31
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        height: 100vh
+
+        .nav-item
+          position: absolute
+          z-index: 30
+          color: white!important
+          font-size: 1.5em
+          font-weight: $fw-light
+
     .navbar-brand
       height: 3em
       width: 3em
