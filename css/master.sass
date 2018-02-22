@@ -138,15 +138,22 @@ img
   font-family: $brand-font
   font-weight: $fw-regular
   letter-spacing: .1rem
+<<<<<<< HEAD
   +add-transition
+=======
+  transition: 0.1 ease-in
+>>>>>>> 75b04ed274a6b28798bf9a583466db1902656aa8
   span.arrow
     text-transform: uppercase
     font-weight: $fw-light
   &:hover
+    transition: 0.1 ease-out
     background-color: lighten($brand-blue, 5%)
     box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.30)!important
   &:active
+    transition: 0.1 ease-out
     background-color: darken($brand-blue, 10%)
+    box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.30)
   &:focus
     outline: 0
     box-shadow: none
@@ -252,16 +259,16 @@ nav
       width: 3em
       &:first-of-type
         .logoWrap
-          position: relative
-          &::before
+          //position: relative
+          //&::before
             content: ""
             position: absolute
             top: 50%
             left: 50%
             z-index: -1
-            transform: translate(-50%, -70%)
+            transform: translate(-65%, -70%)
             background-image: url('../assets/images/hexagon.svg')
-            width: 40vw
+            width: 50vw
             height: 40vw
             background-size: contain
             background-position: center
@@ -321,8 +328,10 @@ nav
 
 
 header
+  .made-by
+    color: $icasting-red
   h1
-    font-size: 3.5em
+    font-size: 3em
     margin-bottom: .75em
     @media (max-width: 768px)
       font-size: 2.5rem
@@ -332,8 +341,10 @@ header
     &.paragraph-preface
       font-size: 1.5em
       margin-bottom: .25em
+  .col-md-5
+    padding-top: 6em
   .form--wrap
-    margin-top: 4em
+    margin-top: 2em
     .form__oneline
       margin-top: 0
     @media (max-width: 768px)
@@ -343,7 +354,7 @@ header
   .image-wrapper
     @include aspect-ratio(3,4)
     img
-      width: 125%
+      width: 150%
       z-index: -1
       @media (max-width: 768px)
         width: 100%
@@ -357,10 +368,16 @@ article
     position: relative
     &.content--left
       &::before
-        background-image: url('../assets/images/hexagon-left.svg')
+        background-image: url('../assets/images/hexagon_gradient.svg')
+        transform: translate(-65%, -10%)
+        width: 60vw
+        height: 60vw
     &.content--right
       &::before
-        background-image: url('../assets/images/hexagon-right.svg')
+        transform: translate(-35%, -10%)
+        width: 60vw
+        height: 60vw
+        background-image: url('../assets/images/hexagon_gradient.svg')
     &::before
       content: ""
       position: absolute
@@ -376,7 +393,7 @@ article
 
   //Dedicated article styles
   &.video
-    margin-bottom: 15%
+    margin: 10% 0% 15% 0%
     .image-wrapper
       z-index: 2
       position: relative
@@ -399,7 +416,7 @@ article
       p
         font-family: $default-font
         font-weight: $fw-light
-        font-size: 1.2em
+        font-size: 1em
         margin-top: 1em
         margin-bottom: 2em
 
@@ -416,7 +433,7 @@ article
       p
         font-family: $default-font
         font-weight: $fw-light
-        font-size: 1.2em
+        font-size: 1em
         margin-top: 1em
         margin-bottom: 2em
       input[type="submit"]
@@ -426,6 +443,7 @@ article
 
 
   &.stats
+    margin: 5% 0%
     .stats__single
       span
         color: $icasting-red
@@ -433,21 +451,15 @@ article
         font-size: 4rem
       h3
         font-weight: $fw-bold
-      p
-        color: #8d9197
-        font-size: 0.9em
-        padding: 0em 1em 1em 1em
       @media (max-width: 768px)
         span
           font-size: 2.5rem
-        p
-          padding: 0em 2em
       @media (min-width: 768px)
-        padding: 1.5em 2em 2em 2em
+        padding: 2em
         span
           font-size: 3rem
       @media (min-width: 992px)
-        padding: 1.5em 4em 4em 4em
+        padding: 4em
 
 
   &.launch
@@ -456,11 +468,14 @@ article
     background-position: center
     background-repeat: no-repeat
     color: #fff
+    position: relative
     .row
       padding: 15em 0
       img
         width: 12.5%
         color: #fff
+        @media (max-width: 768px)
+          width: 30%
       h1
         margin: .5rem 0px
         font-size: 4.0rem
@@ -491,12 +506,19 @@ footer
 
 
 .modal
-  .modal-content
-    background-color: transparent
-    border: none
-    .modal-header
+  .modal-dialog
+    @media (min-width: 992px)
+      max-width: 9912px
+    @media (min-width: 1200px)
+      max-width: 1200px
+    .modal-content
+      background-color: transparent
       border: none
-      button
-        margin: -1rem -1rem -1rem auto
-        float: right
-        line-height: 1
+      .modal-header
+        border: none
+        button
+          margin: -1rem -1rem -1rem auto
+          float: right
+          line-height: 1
+          &:hover
+            box-shadow: none
