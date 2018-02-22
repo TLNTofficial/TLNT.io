@@ -1,28 +1,41 @@
+//Branding colors
 $brand-blue: #0552e2
 $brand-blue-light: #f4fbff
 $brand-dark: #00112a
-$icasting-red: #df1f36
 $brand-grey: #97aacd
 
+//Alternative colors
+$icasting-red: #df1f36
 
+//Import fonts
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400)
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700)
+
+//Included fonts
 $brand-font: 'Ubuntu', sans-serif
 $default-font: 'Open Sans', sans-serif
 
+//Available font weights
+$fw-light: 300
+$fw-regular: 400
+$fw-bold: 700
 
 //General styles
-h1, h2, h3, h4, h5, h6
-  font-weight: 300
-  font-family: $brand-font
-  span
-    font-weight: 700
-a
-  &:focus
-    outline: 0
-    box-shadow: none
 html, body
   font-family: $default-font
   color: $brand-dark
   overflow-x: hidden
+
+h1, h2, h3, h4, h5, h6
+  font-weight: $fw-light
+  font-family: $brand-font
+  span
+    font-weight: $fw-bold
+
+a
+  &:focus
+    outline: 0
+    box-shadow: none
 
 .btn
   cursor: pointer
@@ -30,13 +43,16 @@ html, body
   display: inline
   font-size: .8em
   padding: 1.1em 2em
-  font-weight: 400
+  font-weight: $fw-regular
   box-shadow: none
   background-color: $brand-blue
   color: white
   font-family: $brand-font
-  font-weight: 400
+  font-weight: $fw-regular
   letter-spacing: .1rem
+  span.arrow
+    text-transform: uppercase
+    font-weight: $fw-light
   &:hover
     box-shadow: none
   &:hover
@@ -67,7 +83,7 @@ form
     font-size: .9em
     border: none
     background-color: transparent
-    font-weight: 300
+    font-weight: $fw-light
     &:focus
       outline: none
   input[type="submit"]
@@ -133,12 +149,12 @@ nav
         position: relative
         line-height: 1
         text-transform: uppercase
-        font-family: 'Ubuntu', sans-serif
-        font-weight: 300
+        font-family: $brand-font
+        font-weight: $fw-light
         color: $brand-blue
         &.active
           color: $brand-blue
-          font-weight: 400
+          font-weight: $fw-regular
         span.lowercase
           text-transform: lowercase
         &::after
@@ -239,8 +255,8 @@ article
       @media (max-width: 768px)
         padding: 0px 15px
       p
-        font-family: "Open Sans",sans-serif
-        font-weight: 300
+        font-family: $default-font
+        font-weight: $fw-light
         font-size: 1.2em
         margin-top: 1em
         margin-bottom: 2em
@@ -254,8 +270,8 @@ article
         span
           color: $icasting-red
       p
-        font-family: "Open Sans",sans-serif
-        font-weight: 300
+        font-family: $default-font
+        font-weight: $fw-light
         font-size: 1.2em
         margin-top: 1em
         margin-bottom: 2em
@@ -268,10 +284,10 @@ article
     .single_stat
       span
         color: $icasting-red
-        font-weight: 700
+        font-weight: $fw-bold
         font-size: 4rem
       h3
-        font-weight: 700
+        font-weight: $fw-bold
       p
         color: #8d9197
         font-size: 0.9em
