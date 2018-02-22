@@ -138,11 +138,7 @@ img
   font-family: $brand-font
   font-weight: $fw-regular
   letter-spacing: .1rem
-<<<<<<< HEAD
   +add-transition
-=======
-  transition: 0.1 ease-in
->>>>>>> 75b04ed274a6b28798bf9a583466db1902656aa8
   span.arrow
     text-transform: uppercase
     font-weight: $fw-light
@@ -192,9 +188,14 @@ form
 
 //Dedicated styles
 nav
+  @media (max-width: 991.98px)
+    padding: 20px!important
   &.navbar
     .container
       padding-top: 3em
+      @media (max-width: 991.98px)
+        padding: 0
+
       button.navbar-toggler
         z-index: 30
         padding: 15px
@@ -210,7 +211,7 @@ nav
         &[aria-expanded="true"]
           +add-transition-in
           background-color: white
-          box-shadow: 0 0 0 rgba(0,0,0,0.45), 0 0 0 100vh rgba($brand-blue, 1)
+          box-shadow: 0 0 0 rgba(0,0,0,0.45), 0 0 0 120vh rgba($brand-blue, 1)
         .line
           width: 1.2em
           height: .2em
@@ -239,20 +240,45 @@ nav
     .navbar-collapse
       @media (max-width: 991.98px)
         padding: 20px
-        width: 70%
+        width: 80%
         z-index: 31
         position: absolute
         top: 0
         left: 0
         right: 0
         height: 100vh
+        .logoWrap
+          height: 4em
+          width: 4em
+          position: relative
+          img
+            height: 100%
 
         .nav-item
           position: absolute
           z-index: 30
           color: white!important
-          font-size: 1.5em
+          font-size: 2em
           font-weight: $fw-light
+          padding: 1em 0 0 0!important
+          &::after
+            content: ""
+            width: 0!important
+            height: 0!important
+        .form--wrap
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
+          width: 125%
+          padding: 20px
+          p
+            color: white
+            text-align: center
+            margin-bottom: 0
+            margin-top: 2em
+          .form__oneline
+            box-shadow: none
 
     .navbar-brand
       height: 3em
