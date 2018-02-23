@@ -37,9 +37,13 @@ $(window).on('resize scroll', function() {
 })
 
 
-$(document).on("ready", function() {
-  var d = $( ".pilot .content--left" );
-  var offset = d.offset();
 
-  console.log("is at " + offset.left + "," + offset.top + " of document");
+$(document).ready(function(){
+  $(window).bind('resize scroll load', function() {
+    var leftOffset = $('.content--left').offset().left;
+    var targetLeft = $('.content--left .image-block');
+
+    targetLeft.css("left", -Math.abs(leftOffset));
+
+   });
 });
