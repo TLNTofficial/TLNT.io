@@ -98,6 +98,15 @@ $icasting-red: #df1f36
     transition-duration: .2s
     transition-delay: .05s
 
+@keyframes add-bounce
+  0%, 30%, 60%, 90%, 100%
+    transform: translateY(0)
+  50%
+    transform: translateY(30px)
+  70%
+    transform: translateY(15px)
+
+
 //General styles
 
 
@@ -394,6 +403,8 @@ header
       content: '\2193'
       color: $brand-blue
       font-size: 2em
+      display: inline-block
+      animation: add-bounce 2s infinite
 
     padding-top: 6em
     @media (max-width: 767.98px)
