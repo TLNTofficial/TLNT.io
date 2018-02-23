@@ -382,6 +382,11 @@ header
       font-size: 1.5em
       margin-bottom: .25em
   .col-md-5
+    &::after
+      content: '\2193'
+      color: $brand-blue
+      font-size: 2em
+      
     padding-top: 6em
     @media (max-width: 767.98px)
       padding-top: 2em
@@ -390,10 +395,6 @@ header
     margin-top: 2em
     .form__oneline
       margin-top: 0
-    @media (max-width: 767.98px)
-      margin-top: 4em
-      .form__oneline
-        margin: 0 0
   .image-wrapper
     @media (min-width: 768px)
       @include aspect-ratio(3,4)
@@ -406,6 +407,19 @@ header
       @media (max-width: 767.98px)
         width: 149%
         margin-left: -16.5%
+
+section
+  &.subscribe
+    background-color: $brand-blue
+    padding: 2em 0
+    margin: 1em 0
+    @media (max-width: 767.98px)
+      .form--wrap
+        p
+          color: white
+          margin-bottom: 0
+        .form__oneline
+          box-shadow: none
 
 
 article
