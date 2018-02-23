@@ -177,7 +177,7 @@ form
     box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.55)
     width: 100%
     position: relative
-    input[type="text"]
+    input[type="email"]
       float: left
       position: absolute
       left: 2em
@@ -325,15 +325,12 @@ nav
         margin: 0
         position: relative
         line-height: 1
-        text-transform: uppercase
         font-family: $brand-font
         font-weight: $fw-light
         color: $brand-blue
         &.active
           color: $brand-blue
           font-weight: $fw-regular
-        span.lowercase
-          text-transform: lowercase
         &::after
           content: ""
           right: 0
@@ -471,7 +468,9 @@ article
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-
+  @media (min-width: 767.98px)
+    .image-block
+      left: 0
 
   &.pilot
     .content
