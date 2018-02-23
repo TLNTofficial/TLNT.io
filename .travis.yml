@@ -1,0 +1,18 @@
+deploy:
+  provider: s3
+  access_key_id: "$awskey"
+  secret_access_key: "$awssecret"
+  bucket: "dev.tlnt.io"
+  acl: public_read
+  region: eu-west-1
+  on:
+    branch: dev
+deploy:
+  provider: s3
+  access_key_id: "$awskey"
+  secret_access_key: "$awssecret"
+  bucket: "tlnt.io"
+  acl: public_read
+  region: eu-west-1
+  on:
+    tags: true
