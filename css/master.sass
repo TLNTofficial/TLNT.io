@@ -116,11 +116,6 @@ html, body
   overflow-x: hidden
 
 
-[class^="col-"], [class*=" col-"]
-    padding-right: 20px!important
-    padding-left: 20px!important
-
-
 h1, h2, h3, h4, h5, h6
   font-weight: $fw-light
   font-family: $brand-font
@@ -160,6 +155,7 @@ img
     font-weight: $fw-light
   &:hover
     transition: 0.1 ease-out
+    color: #fff
     background-color: lighten($brand-blue, 5%)
     box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.30)!important
   &:active
@@ -210,8 +206,6 @@ nav
     .container
       padding-top: 3em
       @media (max-width: 991.98px)
-        margin: 0
-        max-width: 100%!important
         padding: 0
 
       button.navbar-toggler
@@ -313,24 +307,6 @@ nav
     .navbar-brand
       height: 3em
       width: 3em
-      padding: 0
-      &:first-of-type
-        .logoWrap
-          //position: relative
-          //&::before
-            content: ""
-            position: absolute
-            top: 50%
-            left: 50%
-            z-index: -1
-            transform: translate(-65%, -70%)
-            background-image: url('../assets/images/hexagon.svg')
-            width: 50vw
-            height: 40vw
-            background-size: contain
-            background-position: center
-            background-repeat: no-repeat
-
       &:last-of-type
         width: 7em
         .logoWrap
@@ -370,7 +346,6 @@ nav
           &::after
             content: ""
             width: 0
-        // .nav-item
         @media (max-width: 991.98px)
           padding-top: 1em
           padding-bottom: 1em
@@ -573,14 +548,14 @@ footer
 .modal
   .modal-dialog
     @media (min-width: 992px)
-      max-width: 9912px
+      max-width: 991.98px
     @media (min-width: 1200px)
-      max-width: 1200px
+      max-width: 1199.98px
     .modal-content
       background-color: transparent
       border: none
       .modal-header
-        border: nonen
+        border: none
         button
           margin: -1rem -1rem -1rem auto
           float: right
