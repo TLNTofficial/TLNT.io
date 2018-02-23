@@ -24,7 +24,7 @@ $(window).on('resize scroll', function() {
         $(this).prop('Counter',0).animate({
           Counter: fullNum
         }, {
-          duration: 3000,
+          duration: 1500,
           easing: 'swing',
           step: function (now) {
             $(this).text(Math.ceil(now));
@@ -36,8 +36,6 @@ $(window).on('resize scroll', function() {
   })
 })
 
-
-
 $(document).ready(function(){
   $(window).bind('resize scroll load', function() {
     var leftOffset = $('.content--left').offset().left;
@@ -47,3 +45,11 @@ $(document).ready(function(){
 
    });
 });
+
+window.sr = ScrollReveal();
+sr.reveal('header .image-wrapper', { duration: 1500 });
+sr.reveal('.video .content--right', { duration: 1500 });
+sr.reveal('.video .image-wrapper', { delay: 400, duration: 1500 });
+sr.reveal('.pilot .content--left', { duration: 1500 });
+sr.reveal('.pilot .order-first', { delay: 400, duration: 1500 });
+sr.reveal('.stats');
