@@ -60,7 +60,13 @@ $(document).ready(function(){
       // (default click behaviour)
       window.location.hash = hash;
     });
+  });
 
+  $(" .nav-link ").on('click', function(e) {
+    if ( $(" .navbar-toggler").attr("aria-expanded") == "true" ) {
+        $(" .navbar-toggler, .navbar").attr("aria-expanded", false);
+        $(".navbar-collapse").removeClass("show");
+    }
   });
 });
 
