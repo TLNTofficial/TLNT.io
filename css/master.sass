@@ -146,6 +146,7 @@ img
     font-weight: $fw-light
   &:hover
     transition: 0.1 ease-out
+    color: #fff
     background-color: lighten($brand-blue, 5%)
     box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.30)!important
   &:active
@@ -297,23 +298,6 @@ nav
     .navbar-brand
       height: 3em
       width: 3em
-      &:first-of-type
-        .logoWrap
-          //position: relative
-          //&::before
-            content: ""
-            position: absolute
-            top: 50%
-            left: 50%
-            z-index: -1
-            transform: translate(-65%, -70%)
-            background-image: url('../assets/images/hexagon.svg')
-            width: 50vw
-            height: 40vw
-            background-size: contain
-            background-position: center
-            background-repeat: no-repeat
-
       &:last-of-type
         width: 7em
         .logoWrap
@@ -554,9 +538,9 @@ footer
 .modal
   .modal-dialog
     @media (min-width: 992px)
-      max-width: 9912px
+      max-width: 991.98px
     @media (min-width: 1200px)
-      max-width: 1200px
+      max-width: 1199.98px
     .modal-content
       background-color: transparent
       border: none
