@@ -1,0 +1,569 @@
+// notes
+// @media (min-width: 576px)
+// @media (min-width: 768px)
+// @media (min-width: 992px)
+// @media (min-width: 1200px)
+// @media (max-width: 575.98px)
+// @media (max-width: 767.98px)
+// @media (max-width: 991.98px)
+// @media (max-width: 1199.98px)
+
+
+/**
+ * Sass stylesheet for TLNT Official
+ *
+ * Sass version 3.5.5 (Bleeding Edge)
+ *
+ * @category   Stylesheet
+ * @author     Sem Spanhaak
+ * @author     Demien Drost
+ * @author URI https://www.iqmedia.nl
+ * @copyright  2018 IQ-Media B.V.
+ * @version    v.1.0.0
+ */
+
+
+//Import fonts
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400)
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700)
+
+//Included fonts
+$brand-font: 'Ubuntu', sans-serif
+$default-font: 'Open Sans', sans-serif
+
+//Available font weights
+$fw-light: 300
+$fw-regular: 400
+$fw-bold: 700
+
+
+//Branding colors
+$brand-blue: #0552e2
+$brand-blue-light: #f4fbff
+$brand-dark: #00112a
+$brand-grey: #97aacd
+
+//Alternative colors
+$icasting-red: #df1f36
+
+
+//Mixins
+@mixin aspect-ratio($width, $height)
+  position: relative
+  &:before
+    display: block
+    content: ""
+    width: 100%
+    padding-top: ($height / $width) * 100%
+  > .content
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+
+
+@mixin add-transition
+  transition: cubic-bezier(0.4, 0.0, 1, 1)
+  @media (max-width: 767.98px)
+    transition-duration: .4s
+    transition-delay: .1s
+  @media (min-width: 768px)
+    transition-duration: .2s
+    transition-delay: .05s
+  &:hover
+    transition: cubic-bezier(0.0, 0.0, 0.2, 1)
+    @media (max-width: 767.98px)
+      transition-duration: .3s
+      transition-delay: 0s
+    @media (min-width: 768px)
+      transition-duration: .15s
+      transition-delay: 0s
+
+@mixin add-transition-in
+  transition: cubic-bezier(0.0, 0.0, 0.2, 1)
+  @media (max-width: 767.98px)
+    transition-duration: .3s
+    transition-delay: 0s
+  @media (min-width: 768px)
+    transition-duration: .15s
+    transition-delay: 0s
+
+@mixin add-transition-out
+  transition: cubic-bezier(0.4, 0.0, 1, 1)
+  @media (max-width: 767.98px)
+    transition-duration: .4s
+    transition-delay: .1s
+  @media (min-width: 768px)
+    transition-duration: .2s
+    transition-delay: .05s
+
+//General styles
+
+
+html, body
+  font-family: $default-font
+  color: $brand-dark
+  overflow-x: hidden
+
+
+h1, h2, h3, h4, h5, h6
+  font-weight: $fw-light
+  font-family: $brand-font
+  span
+    font-weight: $fw-bold
+
+
+a
+  &:focus
+    outline: 0
+    box-shadow: none
+
+img
+  user-drag: none
+  user-select: none
+  -moz-user-select: none
+  -webkit-user-drag: none
+  -webkit-user-select: none
+  -ms-user-select: none
+
+.btn
+  cursor: pointer
+  border-radius: 2em
+  display: inline
+  font-size: .8em
+  padding: 1.1em 2em
+  font-weight: $fw-regular
+  box-shadow: none
+  background-color: $brand-blue
+  color: white
+  font-family: $brand-font
+  font-weight: $fw-regular
+  letter-spacing: .1rem
+  +add-transition
+  span.arrow
+    text-transform: uppercase
+    font-weight: $fw-light
+  &:hover
+    transition: 0.1 ease-out
+    background-color: lighten($brand-blue, 5%)
+    box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.30)!important
+  &:active
+    transition: 0.1 ease-out
+    background-color: darken($brand-blue, 10%)
+    box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.30)
+  &:focus
+    outline: 0
+    box-shadow: none
+
+
+form
+  .form__oneline
+    margin: 20px 0
+    display: inline-block
+    background-color: white
+    border-radius: 2em
+    padding: 6px
+    box-shadow: 0px 8px 21px rgba(179, 195, 219, 0.55)
+    width: 100%
+    position: relative
+    input[type="text"]
+      float: left
+      position: absolute
+      left: 2em
+      top: 50%
+      transform: translateY(-50%)
+      width: calc(100% - 12em)
+      display: inline
+      font-size: .9em
+      border: none
+      background-color: transparent
+      font-weight: $fw-light
+      &:focus
+        outline: none
+    input[type="submit"]
+      float: right
+      z-index: 100
+      &:hover
+        box-shadow: none
+
+
+//Dedicated styles
+nav
+  @media (max-width: 991.98px)
+    padding: 20px!important
+  &.navbar
+    .container
+      padding-top: 3em
+      @media (max-width: 991.98px)
+        padding: 0
+
+      button.navbar-toggler
+        z-index: 30
+        padding: 15px
+        border-radius: 2em
+        background-color: $brand-blue
+        box-shadow: 0px 8px 24px rgba(30, 64, 135, 0.45), 0 0 0 0 rgba($brand-blue, 1)
+        position: relative
+        border: none
+        &:focus
+          outline: none
+        &[aria-expanded="false"]
+          +add-transition-out
+        &[aria-expanded="true"]
+          position: fixed
+          right: 20px
+          +add-transition-out
+          background-color: white
+          box-shadow: 0 0 0 rgba(0,0,0,0.45), 0 0 0 120vh rgba($brand-blue, 1)
+        .line
+          width: 1.2em
+          height: .2em
+          background-color: #fff
+          display: block
+          margin-bottom: .3em
+          border-radius: 2em
+          +add-transition-in
+          &:last-of-type
+            margin-bottom: 0
+        &[aria-expanded="true"]
+          .line
+            background-color: $brand-blue
+            &:nth-child(2)
+              opacity: 0
+            &:nth-child(1)
+              -webkit-transform: translateY(10px) rotate(45deg)
+              -ms-transform: translateY(10px) rotate(45deg)
+              -o-transform: translateY(10px) rotate(45deg)
+              transform: translateY(10px) rotate(45deg)
+            &:nth-child(3)
+              -webkit-transform: translateY(-10px) rotate(-45deg)
+              -ms-transform: translateY(-10px) rotate(-45deg)
+              -o-transform: translateY(-10px) rotate(-45deg)
+              transform: translateY(-10px) rotate(-45deg)
+    .navbar-collapse
+      @media (min-width: 992px)
+        .hidden-md-up
+          display: none
+      @media (max-width: 991.98px)
+        +add-transition-out
+        opacity: 0
+        &.show
+          +add-transition-in
+          opacity: 1
+          position: fixed
+        padding: 20px
+        width: 80%
+        z-index: 31
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        height: 100vh
+        .logoWrap
+          height: 4em
+          width: 4em
+          position: relative
+          img
+            opacity: .4
+            height: 100%
+
+        .nav-item
+          position: absolute
+          z-index: 30
+          color: white!important
+          font-size: 2em
+          font-weight: $fw-light
+          padding: 1em 0 0 0!important
+          &::after
+            content: ""
+            width: 0!important
+            height: 0!important
+        .form--wrap
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
+          width: 125%
+          padding: 20px
+          p
+            color: white
+            text-align: center
+            margin-bottom: 0
+            margin-top: 2em
+          .form__oneline
+            box-shadow: none
+
+    .navbar-brand
+      height: 3em
+      width: 3em
+      &:first-of-type
+        .logoWrap
+          //position: relative
+          //&::before
+            content: ""
+            position: absolute
+            top: 50%
+            left: 50%
+            z-index: -1
+            transform: translate(-65%, -70%)
+            background-image: url('../assets/images/hexagon.svg')
+            width: 50vw
+            height: 40vw
+            background-size: contain
+            background-position: center
+            background-repeat: no-repeat
+
+      &:last-of-type
+        width: 7em
+        .logoWrap
+          height: 100%
+          position: relative
+          img
+            position: absolute
+            top: 50%
+            right: 0%
+            transform: translateY(-50%)
+            height: 50%
+    .navbar-nav
+      .nav-item
+        display: inline-block
+        padding: 0 1.5em
+        margin: 0
+        position: relative
+        line-height: 1
+        text-transform: uppercase
+        font-family: $brand-font
+        font-weight: $fw-light
+        color: $brand-blue
+        &.active
+          color: $brand-blue
+          font-weight: $fw-regular
+        span.lowercase
+          text-transform: lowercase
+        &::after
+          content: ""
+          right: 0
+          top: 0
+          width: 1px
+          height: 100%
+          background-color: $brand-grey
+          position: absolute
+        &:last-of-type
+          &::after
+            content: ""
+            width: 0
+        // .nav-item
+        @media (max-width: 991.98px)
+          padding-top: 1em
+          padding-bottom: 1em
+          &::after
+            content: ""
+            bottom: 0
+            top: auto
+            width: 100%
+            height: 1px
+            background-color: $brand-grey
+            position: absolute
+
+
+header
+  .made-by
+    color: $icasting-red
+  h1
+    font-size: 3em
+    margin-bottom: .75em
+    @media (max-width: 768px)
+      font-size: 2.5rem
+  p
+    font-size: 1em
+    font-family: $default-font
+    &.paragraph-preface
+      font-size: 1.5em
+      margin-bottom: .25em
+  .col-md-5
+    &::after
+      content: '\2193'
+      color: $brand-blue
+      font-size: 2em
+
+    padding-top: 6em
+    @media (max-width: 767.98px)
+      padding-top: 2em
+
+  .form--wrap
+    margin-top: 2em
+    .form__oneline
+      margin-top: 0
+  .image-wrapper
+    @media (min-width: 768px)
+      @include aspect-ratio(3,4)
+    @media (max-width: 767.98px)
+      @include aspect-ratio(5,6)
+      z-index: -1
+    img
+      width: 150%
+      z-index: -1
+      @media (max-width: 767.98px)
+        width: 149%
+        margin-left: -16.5%
+
+section
+  &.subscribe
+    background-color: $brand-blue
+    padding: 2em 0
+    margin: 1em 0
+    @media (max-width: 767.98px)
+      .form--wrap
+        p
+          color: white
+          margin-bottom: 0
+        .form__oneline
+          box-shadow: none
+
+
+article
+  //Main article styles
+  .content
+    z-index: 0
+    display: flex
+    position: relative
+    padding: 0em 4em
+    @media (max-width: 767.98px)
+      padding: 0px 15px
+      padding-top: 2em
+    p
+      font-family: $default-font
+      font-weight: $fw-light
+      font-size: 1em
+      margin-top: 1em
+      margin-bottom: 2em
+    .image-block
+      position: absolute
+      z-index: -1
+      top: 0%
+      transform: translate(-12.5%, -20%)
+      width: 60vw
+      height: 60vw
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+      background-image: url('../assets/images/hexagon_gradient.svg')
+      @media (max-width: 767.98px)
+        width: 100%
+        height: 100%
+        transform: translate(-15px, -20%)
+        background-size: cover
+        background-position: top center
+
+  //Dedicated article styles
+  &.video
+    margin: 10% 0% 15% 0%
+    .image-wrapper
+      z-index: 2
+      position: relative
+      img.video-preview__image
+        -webkit-filter: drop-shadow(0 33px 57px rgba(46, 90, 130, 0.32))
+        -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=33, Color='#2e5a82')"
+        filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=33, Color='#2e5a82')"
+        width: 100%
+        text-align: center
+      img.video-preview__play-icon
+        width: 15%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+
+  &.pilot
+    .content
+      .image-block
+        left: -140%
+      input[type="submit"]
+        margin-top: 2em
+      img
+        width: 100%
+
+
+
+  &.stats
+    margin: 5% 0%
+    .stats__single
+      span
+        color: $icasting-red
+        font-weight: $fw-bold
+        font-size: 4rem
+      h3
+        font-weight: $fw-bold
+      @media (max-width: 768px)
+        span
+          font-size: 2.5rem
+      @media (min-width: 768px)
+        padding: 2em
+        span
+          font-size: 3rem
+      @media (min-width: 992px)
+        padding: 4em
+
+
+  &.launch
+    background-color: $brand-dark
+    background-image: url('../assets/images/World.png')
+    background-position: center
+    background-repeat: no-repeat
+    color: #fff
+    position: relative
+    .row
+      padding: 15em 0
+      img
+        width: 12.5%
+        color: #fff
+        @media (max-width: 768px)
+          width: 30%
+      h1
+        margin: .5rem 0px
+        font-size: 4.0rem
+
+
+footer
+  font-family: $default-font
+  .container
+    .footer__top
+      margin-top: 10%
+      h2
+        margin-bottom: 1.5em
+      p
+        margin: 0px
+      form
+        max-width: 75%
+        @media (max-width: 768px)
+          max-width: 100%
+    .footer__bottom
+      margin: 4em 0em 8em 0em
+      .footer__bottom--logo
+        height: 2.2em
+        width: auto
+        margin-bottom: 2.5%
+      .footer__bottom--copyright
+        font-size: 0.8em
+        color: #97aacd
+
+
+.modal
+  .modal-dialog
+    @media (min-width: 992px)
+      max-width: 9912px
+    @media (min-width: 1200px)
+      max-width: 1200px
+    .modal-content
+      background-color: transparent
+      border: none
+      .modal-header
+        border: none
+        button
+          margin: -1rem -1rem -1rem auto
+          float: right
+          line-height: 1
+          &:hover
+            box-shadow: none
