@@ -107,6 +107,11 @@ html, body
   overflow-x: hidden
 
 
+[class^="col-"], [class*=" col-"]
+    padding-right: 20px!important
+    padding-left: 20px!important
+
+
 h1, h2, h3, h4, h5, h6
   font-weight: $fw-light
   font-family: $brand-font
@@ -196,6 +201,8 @@ nav
     .container
       padding-top: 3em
       @media (max-width: 991.98px)
+        margin: 0
+        max-width: 100%!important
         padding: 0
 
       button.navbar-toggler
@@ -297,6 +304,7 @@ nav
     .navbar-brand
       height: 3em
       width: 3em
+      padding: 0
       &:first-of-type
         .logoWrap
           //position: relative
@@ -561,7 +569,7 @@ footer
       background-color: transparent
       border: none
       .modal-header
-        border: none
+        border: nonen
         button
           margin: -1rem -1rem -1rem auto
           float: right
