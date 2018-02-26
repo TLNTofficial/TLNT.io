@@ -89,8 +89,8 @@ $icasting-red: #df1f36
     transition-duration: .15s
     transition-delay: 0s
 
-@mixin add-transition-out($elem)
-  transition: $elem cubic-bezier(0.4, 0.0, 1, 1)
+@mixin add-transition-out
+  transition: cubic-bezier(0.4, 0.0, 1, 1)
   @media (max-width: 767.98px)
     transition-duration: .4s
     transition-delay: .1s
@@ -211,20 +211,23 @@ nav
       button.navbar-toggler
         z-index: 30
         padding: 15px
-        border-radius: 2em
         background-color: $brand-blue
         box-shadow: 0px 8px 24px rgba(30, 64, 135, 0.45), 0 0 0 0 rgba($brand-blue, 1)
         position: relative
         border: none
+        border-radius: 0
+        &.border-rad
+          border-radius: 2em
         &:focus
           outline: none
         &[aria-expanded="false"]
-          +add-transition-out(box-shadow)
+          +add-transition-out
+          transition-property: box-shadow!important
         &[aria-expanded="true"]
           position: fixed
-          border-radius: 0
           right: 20px
-          +add-transition-out(box-shadow)
+          +add-transition-out
+          transition-property: box-shadow!important
           box-shadow: 0 0 0 rgba(30, 64, 135, 0), 0 0 0 120vh rgba($brand-blue, 1)
         .line
           width: 1.2em
@@ -257,7 +260,9 @@ nav
         .hidden-md-up
           display: none
       @media (max-width: 991.98px)
-        +add-transition-out()
+        &.collapsing
+          overflow: visible!important
+        +add-transition-out
         opacity: 0
         &.show
           +add-transition-in

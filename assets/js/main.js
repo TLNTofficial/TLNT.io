@@ -8,32 +8,35 @@ $.fn.isInViewport = function() {
   return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
-var countUp = 0;
+function addCounter(element) {
+  var fullNum = $( element ).attr("data-number");
+  var Decimal = fullNum.split(',')[1];
+  if(typeof Decimal == "string"){
+    Decimal = ","+Decimal;
+  } else {
+    Decimal = "";
+  }
+  $(element).prop('Counter',0).animate({
+    Counter: fullNum
+  }, {
+    duration: 1500,
+    easing: 'swing',
+    step: function (now) {
+      $(element).text(Math.ceil(now));
+    }
+  });
+}
 
 $(window).on('resize scroll', function() {
-  $('.stats__single--counter').each(function() {
-    if ($(this).isInViewport()) {
-      if(countUp < 3){
-        var fullNum = $(this).text();
-        var Decimal = fullNum.split(',')[1];
-        if(typeof Decimal == "string"){
-          Decimal = ","+Decimal;
-        } else {
-          Decimal = "";
-        }
-        $(this).prop('Counter',0).animate({
-          Counter: fullNum
-        }, {
-          duration: 1500,
-          easing: 'swing',
-          step: function (now) {
-            $(this).text(Math.ceil(now));
-          }
-        });
-      }
-      countUp++
-    }
-  })
+  if ( $("#counter-1").isInViewport() ) {
+    addCounter("#counter-1");
+  }
+  if ( $("#counter-2").isInViewport() ) {
+    addCounter("#counter-2");
+  }
+  if ( $("#counter-3").isInViewport() ) {
+    addCounter("#counter-3");
+  }
 })
 
 $(document).ready(function(){
@@ -51,7 +54,6 @@ $(document).ready(function(){
 
     // store hash
     var hash = this.hash;
-    console.log(hash);
     // animate
     $('html, body').animate({
       scrollTop: $(hash).offset().top
@@ -69,6 +71,28 @@ $(document).ready(function(){
     }
   });
 });
+
+$(document).ready(function(){
+  var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  var bRad = "2em";
+
+  if( iOS ){
+    $("#main-button").css("border-radius", bRad);
+
+    $("#main-button, #sec-button").on("click", function(){
+      if( $("#main-button").attr("aria-expanded") == "true" ){
+        window.setTimeout(function(){
+          $("#main-button").css("border-radius", bRad);
+        },500);
+      } else {
+        $("#main-button").css("border-radius", 0);
+      }
+    })
+  } else {
+    $("#main-button").addClass("border-rad");
+  }
+})
+
 
 window.sr = ScrollReveal();
 sr.reveal('header .image-wrapper', { duration: 1500 });
