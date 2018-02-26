@@ -219,12 +219,12 @@ nav
         &:focus
           outline: none
         &[aria-expanded="false"]
-          +add-transition-out("box-shadow")
+          +add-transition-out(box-shadow)
         &[aria-expanded="true"]
           position: fixed
           border-radius: 0
           right: 20px
-          +add-transition-out("box-shadow")
+          +add-transition-out(box-shadow)
           box-shadow: 0 0 0 rgba(30, 64, 135, 0), 0 0 0 120vh rgba($brand-blue, 1)
         .line
           width: 1.2em
@@ -257,7 +257,7 @@ nav
         .hidden-md-up
           display: none
       @media (max-width: 991.98px)
-        +add-transition-out("")
+        +add-transition-out()
         opacity: 0
         &.show
           +add-transition-in
