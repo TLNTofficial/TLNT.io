@@ -338,6 +338,21 @@ nav
             transform: translateY(-50%)
             height: 50%
     .navbar-nav
+      .nav-link__video
+        &:hover
+          &::before
+            border-color: transparent transparent transparent rgba(0,0,0,.7)
+        &::before
+          content: ""
+          position: absolute
+          width: 0
+          height: 0
+          right: 0
+          top: 30%
+          border-style: solid
+          border-width: 4px 0 4px 8px
+          border-color: transparent transparent transparent $brand-blue
+
       .nav-item
         display: inline-block
         padding: 0 1.5em
