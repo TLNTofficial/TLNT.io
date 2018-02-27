@@ -1,0 +1,31 @@
+{
+  "name": "tlnt.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified\"",
+    "build": "gulp build",
+    "start": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OwenRay/TLNT.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OwenRay/TLNT.io/issues"
+  },
+  "homepage": "https://github.com/OwenRay/TLNT.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-merge": "^0.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify": "^2.1.0",
+    "glob": "^7.1.2",
+    "gulp-watch": "^5.0.0"
+  }
+}
