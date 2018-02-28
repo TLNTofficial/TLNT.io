@@ -37,7 +37,7 @@ $(window).on('resize scroll', function() {
   if ( $("#counter-3").isInViewport() ) {
     addCounter("#counter-3");
   }
-})
+});
 
 $(document).ready(function(){
   $(window).bind('resize scroll load', function() {
@@ -91,7 +91,7 @@ $(document).ready(function(){
   } else {
     $("#main-button").addClass("border-rad");
   }
-})
+});
 
 
 window.sr = ScrollReveal();
