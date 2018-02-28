@@ -6,7 +6,7 @@ const minifycss = require("gulp-minify-css");
 const minifyjs = require("gulp-minify");
 const watch = require('gulp-watch');
 
-const cssfiles = ["assets/css/*.css"];
+const cssfiles = ["assets/css/bootstrap.css"];
 const sassfiles = ["css/master.sass"];
 const jsfiles = ["assets/js/*.js", "assets/js/main.js"];
 
@@ -16,7 +16,7 @@ gulp.task('build:css', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('dist'));
 
-    return merge(scss,files)
+    return merge(files,scss)
             .pipe(concat('styles-min.css'))
             .pipe(gulp.dest('dist'))
             .pipe(minifycss())
