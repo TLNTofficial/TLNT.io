@@ -40,6 +40,11 @@ $(window).on('resize scroll', function() {
 });
 
 $(document).ready(function(){
+  $("form.mailSubscribe").on("submit", function() {
+    var element = "<p class='form__msg'>Thanks for subscribing! Please check your inbox to complete the subscription.</p>";
+    $( element ).insertAfter( this );
+  })
+
   $(window).bind('resize scroll load', function() {
     var leftOffset = $('.content--left').offset().left;
     var targetLeft = $('.content--left .image-block');
