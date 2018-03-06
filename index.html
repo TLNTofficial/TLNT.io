@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TLNT - Changing the talent industry</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' *.tlnt.io tlnt.io; child-src 'none'; frame-src www.youtube.com tlnt.us17.list-manage.com *.tlnt.io tlnt.io; font-src fonts.gstatic.com; style-src 'unsafe-inline' *.tlnt.io tlnt.io">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' *.tlnt.io tlnt.io www.googletagmanager.com www.google-analytics.com; child-src 'none'; frame-src www.youtube.com tlnt.us17.list-manage.com *.tlnt.io tlnt.io; font-src fonts.gstatic.com; style-src 'unsafe-inline' *.tlnt.io tlnt.io">
     <link rel="stylesheet" href="/dist/styles-min.css">
 
     <!-- Favicon and theme -->
@@ -244,16 +244,9 @@
       </div>
     </div>
     <!-- Javascript includes -->
-    <script src="/dist/scripts.js" charset="utf-8"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115104508-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-115104508-1');
-    </script>
+    <script src="/dist/scripts.js" charset="utf-8"></script>
     <!-- end includes -->
     <iframe src="/about-blank.html" name="MailChimpSubscribe" id="MailChimpSubscribe" style="width: 0; height: 0; border: 0;"></iframe>
   </body>

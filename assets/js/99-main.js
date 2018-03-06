@@ -98,6 +98,12 @@ $(document).ready(function(){
   }
 });
 
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-115104508-1');
+
 
 window.sr = ScrollReveal();
 sr.reveal('header .image-wrapper', { duration: 1500 });
