@@ -96,6 +96,24 @@ $(document).ready(function(){
   } else {
     $("#main-button").addClass("border-rad");
   }
+
+  $('.modal').each(function() {
+    $this = $(this);
+    
+    $this.on('shown.bs.modal', function() {
+        toggleVideo('playVideo', $(this));
+    });
+
+    $this.on('hidden.bs.modal', function(){
+       toggleVideo('pauseVideo', $(this));
+    })
+  });
+
+  function toggleVideo(state, div) {
+    var iframe = div.find("iframe")[0].contentWindow;
+    iframe.postMessage('{"event":"command","func":"' + state + '","args":""}', '*');
+  }
+
 });
 
 window.dataLayer = window.dataLayer || [];
